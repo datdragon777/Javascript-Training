@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onblur</title>
+    <link rel="stylesheet" href="./onblur.css">
+</head>
+<body>
+    <h1>Registration form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" onblur="validateInput('name')">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" onblur="validateInput('email')">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" onblur="validateInput('password')">
+        <br>
+        <input type="submit" value="Register">
+    </form>
+
+    <script src="./onblur.js"></script>
+</body>
+</html>
