@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event and event deligation</title>
+    <style>
+      button {
+        padding: 10px 20px;
+        background: green;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-add {
+        text-transform: uppercase;
+      }
+
+      #product-list {
+        list-style: none;
+      }
+
+      .product-item {
+        margin-bottom: 10px;
+      }
+
+      .parent {
+        padding: 50px;
+        background-color: red;
+      }
+
+      .child {
+        padding: 50px;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Example using event delegation -->
+    <div>
+      <h1>Example about using event:</h1>
+      <button id="btn-event">Click me!</button>
+    </div>
+
+    <!-- Example using event delegation -->
+    <div>
+      <h1>Example about using event deligation</h1>
+      <ul id="product-list">
+        <li class="product-item">
+          <span>Spider-man</span>
+          <button class="btn-add">Add to cart</button>
+        </li>
+        <li class="product-item">
+          <span>Batman</span>
+          <button class="btn-add">Add to cart</button>
+        </li>
+        <li class="product-item">
+          <span>Iron-man</span>
+          <button class="btn-add">Add to cart</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Example using event bubbling -->
+    <div>
+      <h1>Example about using event bubbling</h1>
+      <div id="parent" class="parent">
+        <span id="child" class="child">
+          <button id="grand-child" class="grand-child">Click me</button>
+        </span>
+      </div>
+    </div>
+
+    <script src="./event.js"></script>
+  </body>
+</html>
