@@ -259,7 +259,7 @@ const users = [
 // })
 // console.log(customUsers);
 
-//Some
+// Some
 // const filterUser = users.filter((user) => {
 //   return user.tags.some((tag) => {
 //     return tag === "DDD";
@@ -267,7 +267,7 @@ const users = [
 // });
 // console.log(filterUser);
 
-//Some
+// Every
 // const filterUser = users.filter((user) => {
 //   return user.tags.every((tag) => {
 //     return tag === "AAA";
