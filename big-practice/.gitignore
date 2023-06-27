@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+
+# parcel-bundler cache (https://parceljs.org/)
+.parcel-cache
+.cache
+
+# package
+package-lock.json
+
+# Nuxt.js build / generate output
+dist
+
+# vscode
+.vscode
