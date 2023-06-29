@@ -1,0 +1,60 @@
+.main__title {
+  font-weight: var(--fw-bolder);
+  font-size: var(--fs-lg);
+  margin-bottom: 35px;
+}
+
+.btn__box {
+  display: flex;
+  gap: 50px;
+  border-bottom: 1px solid var(--cl-border);
+}
+
+.btn__item {
+  border: none;
+  padding: 12px 0;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn__item:focus {
+  border-bottom: 1px solid var(--cl-status-number);
+}
+
+.item__quantity {
+  margin-left: 5px;
+  padding: 4px;
+  background-color: var(--cl-status-cover);
+  color: var(--cl-status-number);
+  border-radius: 8px;
+}
+
+.content__cover {
+  margin-top: 25px;
+}
+
+.job__list {
+  display: flex;
+}
+
+.create-job__btn {
+  border: 1px dashed var(--cl-secondary);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 40px;
+  color: var(--cl-status-number);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  cursor: pointer;
+}
+
+.create-job__btn:hover {
+  transform: scale(1.005);
+}
