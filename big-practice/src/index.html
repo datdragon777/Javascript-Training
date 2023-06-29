@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./assets/styles/index.css">
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Start Sidebar -->
+    <aside class="left-sidebar">
+      <div class="brand">
+        <a href="#" class="brand__link">
+          <img
+            src="./assets/images/dark-logo.svg"
+            alt="Modernize logo"
+            class="brand__logo"
+          />
+        </a>
+      </div>
+      <div class="sidebar-content">
+        <ul class="sidebar__nav">
+          <li class="sidebar__caption">menu</li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <i class="fa-solid fa-briefcase"></i>
+              <span class="link__name">Jobs</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <!-- End Sidebar -->
+
+    <!-- Start Content Wrapper -->
+    <div class="content">
+      <!-- Start Header -->
+      <header class="header-content">
+        <nav class="navbar">
+          <div class="nav__search">
+            <input type="text" class="search__field" placeholder="search by title"/>
+            <button class="search__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div class="nav__option">
+            <div class="option__item">
+              <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <div class="option__item">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="option__item">
+              <img class="item__avatar" src="./assets/images/avatar.png" alt="avatar">
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- End Header -->
+
+      <!-- Start Main Content -->
+      <main class="main__content" id="main-content">
+        <!-- Start Main Layout -->
+        <div class="main__layout">
+          <h1 class="main__title">Jobs</h1>
+          <div class="btn__box">
+            <button class="btn btn__item">Active Jobs<span class="item__quantity">07</span></button>
+            <button class="btn btn__item">Completed<span class="item__quantity">57</span></button>
+            <button class="btn btn__item">Unfinished<span class="item__quantity">10</span></button>
+          </div>
+          <div class="content__cover">
+            <ul class="job__list"></ul>
+            <button class="btn create-job__btn">
+              <i class="fa-solid fa-plus"></i>
+              <p class="create-job__text">Create new job</p>
+            </button>
+          </div>
+        </div>
+        <!-- End Main Layout -->
+      </main>
+      <!-- End Main Content -->
+    </div>
+    <!-- End Content Wrapper -->
+  </body>
 </html>

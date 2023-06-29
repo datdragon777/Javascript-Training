@@ -9,6 +9,9 @@
   --fw-bolder: 700;
 
   /* Font sizes */
+  --fs-sm: 12px;
+  --fs-md: 14px;
+  --fs-lg: 20px;
 
   /* Line height */
 
@@ -19,7 +22,7 @@
   --cl-dark-white: #F5F6FA;
   --cl-status-number: #39CB8A;
   --cl-status-cover: #E3F2EF;
-  --cl-border: #9C9C9D;
+  --cl-border: #DCDDDF;
   --cl-line-status: #EBECEF;
 
 }
