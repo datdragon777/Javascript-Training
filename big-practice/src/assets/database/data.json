@@ -1,72 +1,74 @@
-﻿[
-	{
-		"id": 1,
-		"title": "Front-end Developers (JavaScript/HTML/CSS)",
-		"category": " Front-End",
-		"location": " Quận 3, Hồ Chí Minh",
-		"description": "Công việc hấp dẫn, đầy tính sáng tạo cao",
-		"date": "3 ngày trước",
-		"status": "active",
-		"logo": "https://salt.topdev.vn/b2twsaSv5u1H0GzFrLzs6Ye2clzWfQCx26nviK35grw/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIwLzA3LzIyL2xvZ29uSFhWRXFYRFdnN20zdG90YlFrRWYxSk95WGR2OTJqNS1kRXJTUS5wbmc/logonhxveqxdwg7m3totbqkef1joyxdv92j5-dersq.jpg"
-	},
-	{
-		"id": 2,
-		"title": "Front-end Developer (ReactJS/ AngularJS/ VueJS) | Up to $2,000",
-		"category": "ReactJS ",
-		"location": " Quận Ba Đình, Hà Nội",
-		"description": "The Front-End Developer is responsible to write software applications from design specifications; Plans, executes and documents unit tests",
-		"date": "3 ngày trước",
-		"status": "active",
-		"logo": "https://salt.topdev.vn/r5eVGp1APy1F-ZW0NBLPoa7eeQS-TWOW7pkpp8MzhFw/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIwLzExLzI2L01lZ2F6b25lLVZpZXRuYW0tTG9nby1JSUN5TC5wbmc/megazone-vietnam-logo-iicyl.jpg"
-	},
-	{
-		"id": 3,
-		"title": "[Senior] Front-end Developer (ReactJS)",
-		"category": "Front-End",
-		"location": " Quận Hoàn Kiếm, Hà Nội",
-		"description": "Final Fantasy XVI is yours, where you can do anything without law, become to anyone that you want.",
-		"date": "6 ngày trước",
-		"status": "active",
-		"logo": "https://salt.topdev.vn/ufjrSiTC2H1yMYRbBvXH6UOKCpJ1BqnozDNIFHRg0LI/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzAyLzIzL1RvcERldi1Mb2dvLURUUy0tLVRodS1OZ3V5ZW4tMTY3NzE0MDkzMS5QTkc/topdev-logo-dts-thu-nguyen-1677140931.jpg"
-	},
-	{
-		"id": 4,
-		"title": "FRONTEND DEVELOPER (Angular, React)",
-		"category": "AngularJS ReactJS TypeScript",
-		"location": " Quận Bắc Từ Liêm, Hà Nội",
-		"description": "Dream job to front end developer, you can do what you want but still control situation.",
-		"date": "1 tuần trước",
-		"status": "active",
-		"logo": "https://salt.topdev.vn/TwJZqRK_k1ADUzRehhDmwbN2TpRlyf2jv3NCKwj6P9c/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA2LzA2L1RvcERldi1MT2dvLS0tTGFtLVRoYW5oLVRoYW8tMTY4NjA0Mjg0My5wbmc/topdev-logo-lam-thanh-thao-1686042843.jpg"
-	},
-	{
-		"id": 5,
-		"title": "VTC TUYỂN LẬP TRÌNH VIÊN: Front-End, Back-End (.NET/PHP/ReactJS)",
-		"category": "JQuery VueJS Angular",
-		"location": " Quận Hoàn Kiếm, Hà Nội",
-		"description": "Thông tin chung: Lương cứng: 15-30 triệu + Thưởng Tối thiểu 1 năm kinh nghiệm Môi trường làm việc năng động, chuyên nghiệp",
-		"date": "1 tuần trước",
-		"status": "active",
-		"logo": "https://salt.topdev.vn/gJUZfPC5OM-TcbNonw1q6J6eR8jiCgpPJkstDKav5Lg/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ZpbGVzL2xvZ29zL2JiMjM5YTIzZWMxMmU4MmIzOWMwMzViMzMwNjk2Y2Q4LmpwZw/bb239a23ec12e82b39c035b330696cd8.jpg"
-	},
-	{
-		"id": 6,
-		"title": "WEB FRONT-END DEVELOPER (NextJS/ReactJS)",
-		"category": "Angular React",
-		"location": " Quận Hoàng Mai, Hà Nội - Quận Cầu Giấy, Hà Nội",
-		"description": "SỐ LƯỢNG: Web front-end developer: 05 lập trình viên Dự án phát triển ứng dụng cho hàng triệu người dùng trong lĩnh vực giáo dục, y tế,...",
-		"date": "1 tuần trước",
-		"status": "active",
-		"logo": "https://salt.topdev.vn/ujoYOdrrdwyqUJnM6dTZvzq2JQNPG1FBRNZJG4KQsis/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIxLzExLzA1L1RvcERldi1RSVNvZnQtRG5nTmd1eW5UaFRoeS0xNjM2MDc0MDQ5LnBuZw/topdev-qisoft-dngnguynththy-1636074049.jpg"
-	},
-	{
-		"id": 7,
-		"title": "10 Frontend Developers (Vue.js, React.js)",
-		"category": "ReactJS VueJS",
-		"location": " Quận Bình Thạnh, Hồ Chí Minh",
-		"description": "Develop the website for Nasa, Microsoft, Ubisoft, VNF, MGM or create a program for testing nuclear weapon of goverment",
-		"date": "1 tuần trước",
-		"status": "active",
-		"logo": "https://salt.topdev.vn/0RF7w_0DN9_Nk-pgEfZl8Rhcism4eqNdupk_MmbcgAY/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA1LzI5L1RvcERldi1TY3JlZW5zaG90LTIwMjMtMDUtMjktMTE0MjAyLTE2ODUzMzUzNDAucG5n/topdev-screenshot-2023-05-29-114202-1685335340.jpg"
-	}
-]
+﻿{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Front-end Developers (JavaScript/HTML/CSS)",
+      "category": " Front-End",
+      "location": " Quận 3, Hồ Chí Minh",
+      "description": "Công việc hấp dẫn, đầy tính sáng tạo cao",
+      "date": "3 ngày trước",
+      "status": "active",
+      "logo": "https://salt.topdev.vn/b2twsaSv5u1H0GzFrLzs6Ye2clzWfQCx26nviK35grw/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIwLzA3LzIyL2xvZ29uSFhWRXFYRFdnN20zdG90YlFrRWYxSk95WGR2OTJqNS1kRXJTUS5wbmc/logonhxveqxdwg7m3totbqkef1joyxdv92j5-dersq.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Front-end Developer (ReactJS/ AngularJS/ VueJS) | Up to $2,000",
+      "category": "ReactJS ",
+      "location": " Quận Ba Đình, Hà Nội",
+      "description": "The Front-End Developer is responsible to write software applications from design specifications; Plans, executes and documents unit tests",
+      "date": "3 ngày trước",
+      "status": "active",
+      "logo": "https://salt.topdev.vn/r5eVGp1APy1F-ZW0NBLPoa7eeQS-TWOW7pkpp8MzhFw/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIwLzExLzI2L01lZ2F6b25lLVZpZXRuYW0tTG9nby1JSUN5TC5wbmc/megazone-vietnam-logo-iicyl.jpg"
+    },
+    {
+      "id": 3,
+      "title": "[Senior] Front-end Developer (ReactJS)",
+      "category": "Front-End",
+      "location": " Quận Hoàn Kiếm, Hà Nội",
+      "description": "Final Fantasy XVI is yours, where you can do anything without law, become to anyone that you want.",
+      "date": "6 ngày trước",
+      "status": "active",
+      "logo": "https://salt.topdev.vn/ufjrSiTC2H1yMYRbBvXH6UOKCpJ1BqnozDNIFHRg0LI/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzAyLzIzL1RvcERldi1Mb2dvLURUUy0tLVRodS1OZ3V5ZW4tMTY3NzE0MDkzMS5QTkc/topdev-logo-dts-thu-nguyen-1677140931.jpg"
+    },
+    {
+      "id": 4,
+      "title": "FRONTEND DEVELOPER (Angular, React)",
+      "category": "AngularJS ReactJS TypeScript",
+      "location": " Quận Bắc Từ Liêm, Hà Nội",
+      "description": "Dream job to front end developer, you can do what you want but still control situation.",
+      "date": "1 tuần trước",
+      "status": "active",
+      "logo": "https://salt.topdev.vn/TwJZqRK_k1ADUzRehhDmwbN2TpRlyf2jv3NCKwj6P9c/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA2LzA2L1RvcERldi1MT2dvLS0tTGFtLVRoYW5oLVRoYW8tMTY4NjA0Mjg0My5wbmc/topdev-logo-lam-thanh-thao-1686042843.jpg"
+    },
+    {
+      "id": 5,
+      "title": "VTC TUYỂN LẬP TRÌNH VIÊN: Front-End, Back-End (.NET/PHP/ReactJS)",
+      "category": "JQuery VueJS Angular",
+      "location": " Quận Hoàn Kiếm, Hà Nội",
+      "description": "Thông tin chung: Lương cứng: 15-30 triệu + Thưởng Tối thiểu 1 năm kinh nghiệm Môi trường làm việc năng động, chuyên nghiệp",
+      "date": "1 tuần trước",
+      "status": "active",
+      "logo": "https://salt.topdev.vn/gJUZfPC5OM-TcbNonw1q6J6eR8jiCgpPJkstDKav5Lg/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ZpbGVzL2xvZ29zL2JiMjM5YTIzZWMxMmU4MmIzOWMwMzViMzMwNjk2Y2Q4LmpwZw/bb239a23ec12e82b39c035b330696cd8.jpg"
+    },
+    {
+      "id": 6,
+      "title": "WEB FRONT-END DEVELOPER (NextJS/ReactJS)",
+      "category": "Angular React",
+      "location": " Quận Hoàng Mai, Hà Nội - Quận Cầu Giấy, Hà Nội",
+      "description": "SỐ LƯỢNG: Web front-end developer: 05 lập trình viên Dự án phát triển ứng dụng cho hàng triệu người dùng trong lĩnh vực giáo dục, y tế,...",
+      "date": "1 tuần trước",
+      "status": "active",
+      "logo": "https://salt.topdev.vn/ujoYOdrrdwyqUJnM6dTZvzq2JQNPG1FBRNZJG4KQsis/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIxLzExLzA1L1RvcERldi1RSVNvZnQtRG5nTmd1eW5UaFRoeS0xNjM2MDc0MDQ5LnBuZw/topdev-qisoft-dngnguynththy-1636074049.jpg"
+    },
+    {
+      "id": 7,
+      "title": "10 Frontend Developers (Vue.js, React.js)",
+      "category": "ReactJS VueJS",
+      "location": " Quận Bình Thạnh, Hồ Chí Minh",
+      "description": "Develop the website for Nasa, Microsoft, Ubisoft, VNF, MGM or create a program for testing nuclear weapon of goverment",
+      "date": "1 tuần trước",
+      "status": "active",
+      "logo": "https://salt.topdev.vn/0RF7w_0DN9_Nk-pgEfZl8Rhcism4eqNdupk_MmbcgAY/fit/170/0/ce/1/aHR0cHM6Ly9hc3NldHMudG9wZGV2LnZuL2ltYWdlcy8yMDIzLzA1LzI5L1RvcERldi1TY3JlZW5zaG90LTIwMjMtMDUtMjktMTE0MjAyLTE2ODUzMzUzNDAucG5n/topdev-screenshot-2023-05-29-114202-1685335340.jpg"
+    }
+  ]
+}

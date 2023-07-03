@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/styles/index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Start Sidebar -->
@@ -96,71 +99,69 @@
         <!-- Start Form Layout -->
         <div class="form__content" id="form__content">
           <h1 class="heading__title">Create new job</h1>
-          <form class="form" action="">
+          <form class="form" id="form">
             <!-- Logo -->
             <div class="form__group">
               <label class="form__name">Logo</label>
               <div class="input__group">
-                <i class="fa-solid fa-image"></i>
                 <input
                   type="text"
                   class="input__place"
+                  id="input__logo"
                   placeholder="Enter link logo"
                 />
+                <div class="form__error"></div>
               </div>
             </div>
             <!-- Title -->
             <div class="form__group">
               <label class="form__name">Title</label>
               <div class="input__group">
-                <i class="fa-solid fa-briefcase"></i>
                 <input
                   type="text"
                   class="input__place"
+                  id="input__title"
                   placeholder="Enter title of job"
                 />
+                <div class="form__error"></div>
               </div>
             </div>
             <!-- Location -->
             <div class="form__group">
               <label class="form__name">Location</label>
               <div class="input__group">
-                <i class="fa-solid fa-location-dot"></i>
                 <input
                   type="text"
                   class="input__place"
+                  id="input__location"
                   placeholder="Enter location of job"
                 />
+                <div class="form__error"></div>
               </div>
             </div>
             <!-- Category -->
             <div class="form__group">
               <label class="form__name">Category</label>
               <div class="input__group">
-                <i class="fa-solid fa-briefcase"></i>
-                <div class="select-menu">
-                  <div class="select-btn">
-                    <span class="sBtn-text">Select your job</span>
-                  </div>
-                  <ul class="options">
-                    <li class="option">
-                      <span class="option-text">Design</span>
-                    </li>
-                    <li class="option">
-                      <span class="option-text">Marketing</span>
-                    </li>
-                    <li class="option">
-                      <span class="option-text">Developer</span>
-                    </li>
-                  </ul>
-                </div>
+                <select class="select__menu" id="select__menu">
+                  <option class="select__value" id="select__value" value="">Select your job</option>
+                  <option class="select__value" id="select__value" value="design">Design</option>
+                  <option class="select__value" id="select__value" value="marketing">Marketing</option>
+                  <option class="select__value" id="select__value" value="developer">Developer</option>
+                </select>
+                <div class="form__error"></div>
               </div>
             </div>
-            <!-- Title -->
+            <!-- Description -->
             <div class="form__group">
               <label class="form__name">Description</label>
               <div class="input__group">
-                <textarea class="form__description" placeholder="Enter job description"></textarea>
+                <textarea
+                  class="form__description"
+                  id="input__description"
+                  placeholder="Enter job description"
+                ></textarea>
+                <div class="form__error"></div>
               </div>
             </div>
             <!-- Back And Submit Button -->
@@ -177,5 +178,6 @@
     <!-- End Content Wrapper -->
 
     <script src="./assets/scripts/index.js"></script>
+    <script src="./assets/scripts/constants/validation.js"></script>
   </body>
 </html>

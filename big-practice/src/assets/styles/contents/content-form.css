@@ -17,8 +17,6 @@
 
 .input__group {
   margin-top: 5px;
-  display: flex;
-  align-items: flex-start;
 }
 
 .input__group .fa-solid {
@@ -38,15 +36,12 @@
   border-radius: 0 4px 4px 0;
 }
 
+.select__menu,
 .input__place:focus {
   outline: none;
 }
 
-.select-menu {
-  width: 100%;
-}
-
-.select-menu .select-btn {
+.select__menu {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -57,38 +52,6 @@
   align-items: center;
   font-size: var(--fs-md);
   cursor: pointer;
-}
-
-.select-menu .options {
-  position: relative;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  display: none;
-}
-
-.select-menu.active .options {
-  display: block;
-}
-
-.options .option {
-  display: flex;
-  cursor: pointer;
-  padding: 10px 16px;
-  border-radius: 8px;
-  align-items: center;
-  background: #fff;
-}
-
-.options .option:hover {
-  background: #f2f2f2;
-}
-
-.option .option-text {
-  font-size: var(--fs-md);
-  color: var(--cl-secondary);
 }
 
 .form__description {
@@ -110,4 +73,22 @@
   display: flex;
   justify-content: flex-end;
   gap: 20px;
+}
+
+.form__error {
+  font-size: var(--fs-sm);
+  color: var(--cl-alert);
+  margin-top: 5px;
+}
+
+.input__group.form__success select,
+.input__group.form__success textarea,
+.input__group.form__success input {
+  border-color: var(--cl-status-number);
+}
+
+.input__group.form__error select,
+.input__group.form__error textarea,
+.input__group.form__error input {
+  border-color: var(--cl-alert);
 }
