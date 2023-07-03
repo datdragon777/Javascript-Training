@@ -1,3 +1,7 @@
+.form {
+  width: 50%;
+}
+
 .form__content {
   display: none;
 }
@@ -14,10 +18,10 @@
 .input__group {
   margin-top: 5px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.input__group .fa-solid{
+.input__group .fa-solid {
   display: inline;
   padding: 7.5px 12px;
   font-size: var(--fs-md);
@@ -28,7 +32,7 @@
 }
 
 .input__place {
-  width: 50%;
+  width: 100%;
   padding: 7px 12px;
   border: 1px solid var(--cl-border);
   border-radius: 0 4px 4px 0;
@@ -36,4 +40,74 @@
 
 .input__place:focus {
   outline: none;
+}
+
+.select-menu {
+  width: 100%;
+}
+
+.select-menu .select-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: var(--cl-primary);
+  padding: 7px 12px;
+  border: 1px solid var(--cl-border);
+  border-radius: 0 4px 4px 0;
+  align-items: center;
+  font-size: var(--fs-md);
+  cursor: pointer;
+}
+
+.select-menu .options {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.select-menu.active .options {
+  display: block;
+}
+
+.options .option {
+  display: flex;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+
+.options .option:hover {
+  background: #f2f2f2;
+}
+
+.option .option-text {
+  font-size: var(--fs-md);
+  color: var(--cl-secondary);
+}
+
+.form__description {
+  margin: 0;
+  width: 100%;
+  font-size: var(--fs-md);
+  color: var(--cl-secondary);
+  border: 1px solid var(--cl-border);
+  padding: 12px;
+  font-family: var(--font-primary);
+  height: 150px;
+}
+
+.form__description:focus {
+  outline: none;
+}
+
+.form__btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
 }

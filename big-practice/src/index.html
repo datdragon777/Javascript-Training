@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/styles/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
     <!-- Start Sidebar -->
@@ -45,7 +39,11 @@
       <header class="header-content">
         <nav class="navbar">
           <div class="nav__search">
-            <input type="text" class="search__field" placeholder="search by title"/>
+            <input
+              type="text"
+              class="search__field"
+              placeholder="search by title"
+            />
             <button class="search__btn">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -58,7 +56,11 @@
               <i class="fa-solid fa-bell"></i>
             </div>
             <div class="option__item">
-              <img class="item__avatar" src="./assets/images/avatar.png" alt="avatar">
+              <img
+                class="item__avatar"
+                src="./assets/images/avatar.png"
+                alt="avatar"
+              />
             </div>
           </div>
         </nav>
@@ -67,32 +69,113 @@
 
       <!-- Start Main Content -->
       <main class="main__content" id="main-content">
-        <!-- Start Main Layout -->
+        <!-- Start List Content -->
         <div class="list__content" id="list__content">
           <h1 class="heading__title">Jobs</h1>
           <div class="btn__box">
-            <button class="btn btn__item">Active Jobs<span class="item__quantity">07</span></button>
-            <button class="btn btn__item">Completed<span class="item__quantity">57</span></button>
-            <button class="btn btn__item">Unfinished<span class="item__quantity">10</span></button>
+            <button class="btn btn__item">
+              Active Jobs<span class="item__quantity">07</span>
+            </button>
+            <button class="btn btn__item">
+              Completed<span class="item__quantity">57</span>
+            </button>
+            <button class="btn btn__item">
+              Unfinished<span class="item__quantity">10</span>
+            </button>
           </div>
           <div class="content__cover">
             <ul class="job__list"></ul>
-            <button class="btn create-job__btn">
+            <button class="btn create-job__btn" id="create-job__btn">
               <i class="fa-solid fa-plus"></i>
               <p class="create-job__text">Create new job</p>
             </button>
           </div>
         </div>
-        <!-- End Main Layout -->
+        <!-- End List Content -->
 
         <!-- Start Form Layout -->
         <div class="form__content" id="form__content">
           <h1 class="heading__title">Create new job</h1>
+          <form class="form" action="">
+            <!-- Logo -->
+            <div class="form__group">
+              <label class="form__name">Logo</label>
+              <div class="input__group">
+                <i class="fa-solid fa-image"></i>
+                <input
+                  type="text"
+                  class="input__place"
+                  placeholder="Enter link logo"
+                />
+              </div>
+            </div>
+            <!-- Title -->
+            <div class="form__group">
+              <label class="form__name">Title</label>
+              <div class="input__group">
+                <i class="fa-solid fa-briefcase"></i>
+                <input
+                  type="text"
+                  class="input__place"
+                  placeholder="Enter title of job"
+                />
+              </div>
+            </div>
+            <!-- Location -->
+            <div class="form__group">
+              <label class="form__name">Location</label>
+              <div class="input__group">
+                <i class="fa-solid fa-location-dot"></i>
+                <input
+                  type="text"
+                  class="input__place"
+                  placeholder="Enter location of job"
+                />
+              </div>
+            </div>
+            <!-- Category -->
+            <div class="form__group">
+              <label class="form__name">Category</label>
+              <div class="input__group">
+                <i class="fa-solid fa-briefcase"></i>
+                <div class="select-menu">
+                  <div class="select-btn">
+                    <span class="sBtn-text">Select your job</span>
+                  </div>
+                  <ul class="options">
+                    <li class="option">
+                      <span class="option-text">Design</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Marketing</span>
+                    </li>
+                    <li class="option">
+                      <span class="option-text">Developer</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Title -->
+            <div class="form__group">
+              <label class="form__name">Description</label>
+              <div class="input__group">
+                <textarea class="form__description" placeholder="Enter job description"></textarea>
+              </div>
+            </div>
+            <!-- Back And Submit Button -->
+            <div class="form__btn">
+              <button class="btn btn__back">Back</button>
+              <button type="submit" class="btn btn__create">Create</button>
+            </div>
+          </form>
         </div>
         <!-- End Form Layout -->
       </main>
       <!-- End Main Content -->
     </div>
     <!-- End Content Wrapper -->
+
+    <script src="./assets/scripts/index.js"></script>
   </body>
 </html>
