@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "server": "json-server --watch json-server/db.json",
     "start": "parcel src/index.html",
     "build": "rm -rf build && rm -rf .parcel-cache && parcel build ./src/*.html --no-cache --no-source-maps --dist-dir dist"
   },
@@ -10,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.44.0",
     "parcel": "^2.9.3"
   }
 }
