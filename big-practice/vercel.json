@@ -1,3 +1,5 @@
 {
-  "outputDirectory": "./big-practice/dist"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
 }
