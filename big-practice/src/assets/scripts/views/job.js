@@ -1,4 +1,4 @@
-export default class Job {
+export default class JobView {
   constructor() {
     const createJobBtn = document.getElementById("create-job__btn")
     const listContent = document.getElementById("list__content")
@@ -10,6 +10,6 @@ export default class Job {
       formContent.style.display = "block";
     });
 
-    
+
   }
 }
