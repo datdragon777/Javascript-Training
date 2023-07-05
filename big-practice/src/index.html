@@ -77,13 +77,13 @@
           <h1 class="heading__title">Jobs</h1>
           <div class="btn__box">
             <button class="btn btn__item">
-              Active Jobs<span class="item__quantity">07</span>
+              Active Jobs<span class="item__quantity">00</span>
             </button>
             <button class="btn btn__item">
-              Completed<span class="item__quantity">57</span>
+              Completed<span class="item__quantity">00</span>
             </button>
             <button class="btn btn__item">
-              Unfinished<span class="item__quantity">10</span>
+              Unfinished<span class="item__quantity">00</span>
             </button>
           </div>
           <div class="content__cover">
@@ -95,8 +95,11 @@
           </div>
         </div>
         <!-- End List Content -->
+      </main>
+      <!-- End Main Content -->
 
-        <!-- Start Form Layout -->
+      <!-- Start Form Layout -->
+      <div class="form__bg" id="form__bg">
         <div class="form__content" id="form__content">
           <h1 class="heading__title">Create new job</h1>
           <form class="form" id="form">
@@ -144,10 +147,30 @@
               <label class="form__name">Category</label>
               <div class="input__group">
                 <select class="select__menu" id="select__menu">
-                  <option class="select__value" id="select__value" value="">Select your job</option>
-                  <option class="select__value" id="select__value" value="design">Design</option>
-                  <option class="select__value" id="select__value" value="marketing">Marketing</option>
-                  <option class="select__value" id="select__value" value="developer">Developer</option>
+                  <option class="select__value" id="select__value" value="">
+                    Select your job
+                  </option>
+                  <option
+                    class="select__value"
+                    id="select__value"
+                    value="design"
+                  >
+                    Design
+                  </option>
+                  <option
+                    class="select__value"
+                    id="select__value"
+                    value="marketing"
+                  >
+                    Marketing
+                  </option>
+                  <option
+                    class="select__value"
+                    id="select__value"
+                    value="developer"
+                  >
+                    Developer
+                  </option>
                 </select>
                 <div class="form__error"></div>
               </div>
@@ -166,18 +189,16 @@
             </div>
             <!-- Back And Submit Button -->
             <div class="form__btn">
-              <button class="btn btn__back">Back</button>
               <button type="submit" class="btn btn__create">Create</button>
             </div>
           </form>
         </div>
-        <!-- End Form Layout -->
-      </main>
-      <!-- End Main Content -->
+      </div>
+
+      <!-- End Form Layout -->
     </div>
     <!-- End Content Wrapper -->
 
-    <script src="./assets/scripts/index.js"></script>
-    <script src="./assets/scripts/constants/validation.js"></script>
+    <script type="module" src="./assets/scripts/index.js"></script>
   </body>
 </html>

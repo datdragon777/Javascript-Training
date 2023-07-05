@@ -1,9 +1,27 @@
-.form {
-  width: 50%;
+.form__bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(94, 110, 141, 0.9);
+  display: flex;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  z-index: 10000;
+  visibility: hidden;
+}
+
+.form__bg.is-visible {
+  visibility: visible;
 }
 
 .form__content {
-  display: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  width: 700px;
+  margin: auto auto;
+  padding: 40px;
 }
 
 .form__group {
