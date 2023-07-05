@@ -1,15 +1,42 @@
+import { validationForm, inputLogo, inputTitle, inputLocation, selectMenu, inputDescription } from "../helpers/validation";
+
+
 export default class JobView {
   constructor() {
-    const createJobBtn = document.getElementById("create-job__btn")
-    const listContent = document.getElementById("list__content")
-    const formContent = document.getElementById("form__content")
+    // Form
+    this.createJobBtn = document.getElementById("create-job__btn");
+    this.formBg = document.getElementById("form__bg");
+    this.formContent = document.getElementById("form__content");
+    this.form = document.getElementById("form");
+  }
 
-
-    createJobBtn.addEventListener("click", () => {
-      listContent.style.display = "none";
-      formContent.style.display = "block";
+  openFormPopup() {
+    this.createJobBtn.addEventListener("click", () => {
+      this.formBg.classList.add("is-visible");
+      inputLogo.value = ''
+      inputTitle.value = ''
+      inputLocation.value = ''
+      selectMenu.value = ''
+      inputDescription.value = ''
     });
+  }
 
+  closeFormPopup() {
+    document.addEventListener("mousedown", (event) => {
+      const targetElement = event.target;
+      if (
+        targetElement !== this.formContent &&
+        !this.formContent.contains(targetElement) &&
+        targetElement !== this.createJobBtn
+      ) {
+        this.formBg.classList.remove("is-visible");
+      }
+    });
+  }
 
+  addJobView() {
+    form.addEventListener("submit", (e) => {
+      validationForm();
+    });
   }
 }

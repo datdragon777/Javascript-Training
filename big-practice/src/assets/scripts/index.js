@@ -1,8 +1,9 @@
-const createJobBtn = document.getElementById("create-job__btn")
-const listContent = document.getElementById("list__content")
-const formContent = document.getElementById("form__content")
+import JobView from "./views/job";
+import JobModel from "./models/job";
+import JobController from "./controllers/job"
 
-createJobBtn.addEventListener("click", () => {
-  listContent.style.display = "none";
-  formContent.style.display = "block";
-});
+const jobView = new JobView
+const jobModel = new JobModel
+const jobController = new JobController(jobView, jobModel)
+
+
