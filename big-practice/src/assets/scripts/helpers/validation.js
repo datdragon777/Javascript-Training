@@ -1,8 +1,10 @@
-export const inputLogo = document.getElementById("input__logo");
-export const inputTitle = document.getElementById("input__title");
-export const inputLocation = document.getElementById("input__location");
-export const selectMenu = document.getElementById("select__menu");
-export const inputDescription = document.getElementById("input__description");
+const formElements = [
+  { element: document.getElementById("input__logo"), message: "Logo image URL is required" },
+  { element: document.getElementById("input__title"), message: "Title is required" },
+  { element: document.getElementById("input__location"), message: "Location is required" },
+  { element: document.getElementById("select__menu"), message: "Category is required" },
+  { element: document.getElementById("input__description"), message: "Description is required" }
+];
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
@@ -23,44 +25,27 @@ const setSuccess = (element) => {
 };
 
 export const validationForm = () => {
-  const logoValue = inputLogo.value.trim();
-  const titleValue = inputTitle.value.trim();
-  const locationValue = inputLocation.value.trim();
-  const categoryValue = selectMenu.value;
-  const descriptionValue = inputDescription.value.trim();
+  let isValid = true;
 
-  if (logoValue === "") {
-    setError(inputLogo, "Logo image url is required");
-    isValid = false;
-  } else {
-    setSuccess(inputLogo);
-  }
+  formElements.forEach(({ element, message }) => {
+    const value = element.value.trim();
 
-  if (titleValue === "") {
-    setError(inputTitle, "Title is required");
-    isValid = false;
-  } else {
-    setSuccess(inputTitle);
-  }
+    if (value === "") {
+      setError(element, message);
+      isValid = false;
+    } else {
+      setSuccess(element);
+    }
+  });
 
-  if (locationValue === "") {
-    setError(inputLocation, "Location is required");
-    isValid = false;
-  } else {
-    setSuccess(inputLocation);
-  }
+  return isValid;
+};
 
-  if (categoryValue === "") {
-    setError(selectMenu, "Category is required");
-    isValid = false;
-  } else {
-    setSuccess(selectMenu);
-  }
-
-  if (descriptionValue === "") {
-    setError(inputDescription, "Description is required");
-    isValid = false;
-  } else {
-    setSuccess(inputDescription);
-  }
+export const clearValidationStyles = () => {
+  formElements.forEach(({ element }) => {
+    const inputControl = element.parentElement;
+    inputControl.classList.remove("form__success", "form__error");
+    const errorDisplay = inputControl.querySelector(".form__error");
+    errorDisplay.innerText = "";
+  });
 };

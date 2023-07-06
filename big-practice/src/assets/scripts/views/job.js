@@ -1,4 +1,4 @@
-import { validationForm, inputLogo, inputTitle, inputLocation, selectMenu, inputDescription } from "../helpers/validation";
+import { validationForm, clearValidationStyles} from "../helpers/validation";
 
 
 export default class JobView {
@@ -12,12 +12,9 @@ export default class JobView {
 
   openFormPopup() {
     this.createJobBtn.addEventListener("click", () => {
+      this.form.reset()
+      clearValidationStyles()
       this.formBg.classList.add("is-visible");
-      inputLogo.value = ''
-      inputTitle.value = ''
-      inputLocation.value = ''
-      selectMenu.value = ''
-      inputDescription.value = ''
     });
   }
 
@@ -34,9 +31,15 @@ export default class JobView {
     });
   }
 
-  addJobView() {
-    form.addEventListener("submit", (e) => {
-      validationForm();
+  addJobView(handle) {
+    this.form.addEventListener("submit", (e) => {
+      if(!validationForm()) {
+        e.preventDefault();
+      } else {
+        console.log('mlem');
+        
+      }
+
     });
   }
 }

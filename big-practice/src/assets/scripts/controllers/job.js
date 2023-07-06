@@ -7,9 +7,12 @@ export default class JobContoller {
     this.jobView.openFormPopup()
     this.jobView.closeFormPopup()
 
-    // CRUD 
-    this.jobView.addJobView()
+    // CRUD
+    this.jobView.addJobView(this.handleAddJob.bind(this))
   }
 
+  async handleAddJob(data) {
+    return await this.jobModel.addJob(data)
+  }
 
 }
