@@ -6,7 +6,7 @@ export default class JobModel {
   }
 
   async getListJobs() {
-    const response = await getAllJobs
+    const response = await getAllJobs()
     this.jobs = response
 
     return response

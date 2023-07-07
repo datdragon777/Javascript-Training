@@ -8,6 +8,13 @@ export default class JobView {
     this.formBg = document.getElementById("form__bg");
     this.formContent = document.getElementById("form__content");
     this.form = document.getElementById("form");
+    this.jobUl = document.getElementById("list__job")
+  }
+
+  async listJob(jobData) {
+    this.jobUl.innerHTML = await jobData
+      .map((job) => `<li data-id="${job.id}">${job.title}</li>`)
+      .join("");
   }
 
   openFormPopup() {
@@ -37,9 +44,7 @@ export default class JobView {
         e.preventDefault();
       } else {
         console.log('mlem');
-        
       }
-
     });
   }
 }
