@@ -11,6 +11,7 @@
   /* Font sizes */
   --fs-sm: 12px;
   --fs-md: 14px;
+  --fs-x-md: 15px;
   --fs-lg: 20px;
 
   /* Line height */
@@ -25,5 +26,7 @@
   --cl-border: #DCDDDF;
   --cl-line-status: #EBECEF;
   --cl-alert: #ff3860;
-
+  --cl-gray-text: #8B9096;
+  --cl-bg-cover: #f0f0f0;
+  --cl-light-gray: #D2D2D2
 }

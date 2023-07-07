@@ -29,20 +29,24 @@
 
 .content__cover {
   margin-top: 25px;
+  display: flex;
+  gap: 30px;
 }
 
 .job__list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .create-job__btn {
+  width: 250px;
   border: 1px dashed var(--cl-secondary);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 40px;
   color: var(--cl-status-number);
   font-weight: var(--fw-bold);
   font-size: var(--fs-lg);
@@ -50,5 +54,5 @@
 }
 
 .create-job__btn:hover {
-  transform: scale(1.005);
+  background-color: var(--cl-status-cover);
 }

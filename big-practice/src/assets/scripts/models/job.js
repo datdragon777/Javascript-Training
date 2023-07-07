@@ -3,6 +3,16 @@ import { getAllJobs, createJob } from "../services/job";
 export default class JobModel {
   constructor() {
     this.jobs = [];
+    this.job = {
+      id: "",
+      logo: "",
+      title: "",
+      date: new Date(),
+      category: "",
+      location: "",
+      description: "",
+      status: "active",
+    };
   }
 
   async getListJobs() {
@@ -13,17 +23,6 @@ export default class JobModel {
   }
 
   async addJob() {
-    const job = {
-      id: "",
-      logo: "",
-      title: "",
-      date: new Date(),
-      category: "",
-      location: "",
-      description: "",
-      status: "active",
-    };
-
     return await createJob(job);
   }
 
