@@ -41,34 +41,34 @@
       "id": 8
     },
     {
-      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
-      "title": "Gundam unicorn ",
-      "date": "2023-07-10T03:18:52.703Z",
-      "category": "developer",
-      "location": "new york",
-      "description": "Plan your marketing arsenal, put everything in a marketing calendar, evaluate what works and what doesn't, and adjust accordingly. Repeat what works, fix what doesn't and eliminate when necessary.",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+      "title": "Test title",
+      "date": "2023-07-10T09:28:58.252Z",
+      "category": "design",
+      "location": "Tokyo",
+      "description": "The Graphic Designer job description includes the entire process of defining requirements, visualizing and creating graphics including illustrations, logos, layouts and photos. You'll be the one to shape the visual aspects of websites, books, magazines, product packaging, exhibitions and more.",
       "status": "active",
-      "id": 9
+      "id": 12
     },
     {
-      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
-      "title": "Gundam Aerial",
-      "date": "2023-07-10T04:59:10.183Z",
-      "category": "marketing",
-      "location": "abadbadb",
-      "description": "dđ",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+      "title": "Hatabana",
+      "date": "2023-07-10T09:35:07.270Z",
+      "category": "developer",
+      "location": "Kyoto",
+      "description": "Kyoto, located in the Kansai region of Japan, is the country's seventh largest city, with a population of 1.4 million people.",
       "status": "active",
-      "id": 10
+      "id": 13
     },
     {
-      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
-      "title": "Dat job",
-      "date": "2023-07-10T07:21:39.074Z",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
+      "title": "Google dev",
+      "date": "2023-07-10T10:14:52.541Z",
       "category": "developer",
-      "location": "Vitnam",
-      "description": "Apply knowledge of HTML5/CSS3/JavaScript (with ES6 syntax).",
+      "location": "da nang",
+      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
       "status": "active",
-      "id": 11
+      "id": 14
     }
   ]
 }

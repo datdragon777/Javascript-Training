@@ -1,6 +1,6 @@
 const baseUrl = "http://localhost:3000/jobs";
 
-export const getAllJobs = async() => {
+export const getJobsService = async() => {
   try {
     const response = await fetch(baseUrl);
     const jobs = await response.json();
@@ -20,7 +20,7 @@ export const getJobById = async(id) => {
   }
 };
 
-export const createJob = async(jobData) => {
+export const addJobService = async(jobData) => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
