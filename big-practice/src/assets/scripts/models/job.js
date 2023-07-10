@@ -22,8 +22,8 @@ export default class JobModel {
     return response
   }
 
-  async addJob() {
-    return await createJob(job);
+  async addJob(jobData) {
+    return await createJob(jobData);
   }
 
   // getJobById(id) {

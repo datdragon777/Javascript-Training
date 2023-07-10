@@ -1,5 +1,4 @@
-import { validationForm, clearValidationStyles} from "../helpers/validation";
-
+import { validationForm, clearValidationStyles } from "../helpers/validation";
 
 export default class JobView {
   constructor() {
@@ -8,7 +7,7 @@ export default class JobView {
     this.formBg = document.getElementById("form__bg");
     this.formContent = document.getElementById("form__content");
     this.form = document.getElementById("form");
-    this.jobUl = document.getElementById("job__list")
+    this.jobUl = document.getElementById("job__list");
   }
 
   // async listJob(jobData) {
@@ -104,8 +103,8 @@ export default class JobView {
 
   openFormPopup() {
     this.createJobBtn.addEventListener("click", () => {
-      this.form.reset()
-      clearValidationStyles()
+      this.form.reset();
+      clearValidationStyles();
       this.formBg.classList.add("is-visible");
     });
   }
@@ -123,13 +122,78 @@ export default class JobView {
     });
   }
 
+  // addJobView(handle) {
+  //   this.form.addEventListener("submit", (e) => {
+  //     if(!validationForm()) {
+  //       e.preventDefault();
+  //     } else {
+  //       // formElements.forEach(( element ) => {
+  //       //   const jobValue = handle(element.value);
+  //       //   console.log(jobValue);
+  //       // e.preventDefault();
+
+  //       // });
+  //     }
+  //   });
+  // }
+
   addJobView(handle) {
-    this.form.addEventListener("submit", (e) => {
-      if(!validationForm()) {
-        e.preventDefault();
-      } else {
-        console.log('mlem');
+    this.form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!this.validationForm()) {
+        return;
+      }
+
+      const jobValue = {
+        logo: document.getElementById("input__logo").value,
+        title: document.getElementById("input__title").value,
+        date: new Date(),
+        category: document.getElementById("select__menu").value,
+        location: document.getElementById("input__location").value,
+        description: document.getElementById("input__description").value,
+        status: "active",
+      };
+      console.log(jobValue);
+
+      try {
+        const newJob = await handle(jobValue);
+        console.log(newJob);
+        this.displayJob(newJob);
+        this.resetForm();
+      } catch (err) {
+        console.error(err);
       }
     });
+  }
+
+  displayJob(job) {
+    const jobItem = document.createElement("li");
+    const jobDate = moment(job.date).format("DD MMMM");
+
+    jobItem.innerHTML = `
+      <li class="job__item" data-id="${job.id}">
+        <div class="card__header">
+          <div class="card__cover">
+            <img class="card__logo" src="${job.logo}"/>
+          </div>
+          <div class="card__date">${jobDate}</div>
+        </div>
+        <div class="card__body">
+          <div class="card__category">${job.category}</div>
+          <div class="card__title">${job.title}</div>
+          <div class="card__location">${job.location}</div>
+          <div class="card__description">${job.description}</div>
+        </div>
+        <div class="card__footer">
+          <a class="card__link">See more</a>
+        </div>
+      </li>
+    `;
+
+    this.jobUl.appendChild(jobItem);
+  }
+
+  resetForm() {
+    this.form.reset();
   }
 }

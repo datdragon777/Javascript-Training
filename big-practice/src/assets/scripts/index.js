@@ -7,3 +7,4 @@ const jobModel = new JobModel
 const jobController = new JobController(jobView, jobModel)
 
 jobController.handleListJob();
+
