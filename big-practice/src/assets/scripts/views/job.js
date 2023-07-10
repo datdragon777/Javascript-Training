@@ -53,7 +53,8 @@ export default class JobView {
 
       const cardDate = document.createElement("div");
       cardDate.classList.add("card__date");
-      cardDate.textContent = job.date;
+      const jobDate = moment(job.date).format("DD MMMM");
+      cardDate.textContent = jobDate;
 
       cardCover.appendChild(logoImg);
       cardHeader.appendChild(cardCover);
@@ -97,7 +98,6 @@ export default class JobView {
 
       fragment.appendChild(li);
     });
-
     this.jobUl.appendChild(fragment);
   }
 
@@ -122,21 +122,6 @@ export default class JobView {
     });
   }
 
-  // addJobView(handle) {
-  //   this.form.addEventListener("submit", (e) => {
-  //     if(!validationForm()) {
-  //       e.preventDefault();
-  //     } else {
-  //       // formElements.forEach(( element ) => {
-  //       //   const jobValue = handle(element.value);
-  //       //   console.log(jobValue);
-  //       // e.preventDefault();
-
-  //       // });
-  //     }
-  //   });
-  // }
-
   addJobView(handle) {
     this.form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -159,7 +144,7 @@ export default class JobView {
         const newJob = await handle(jobValue);
         console.log(newJob);
         this.displayJob(newJob);
-        this.resetForm();
+        this.formBg.classList.remove("is-visible");
       } catch (err) {
         return err;
       }
@@ -191,9 +176,5 @@ export default class JobView {
     `;
 
     this.jobUl.appendChild(jobItem);
-  }
-
-  resetForm() {
-    this.form.reset();
   }
 }

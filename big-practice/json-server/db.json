@@ -1,44 +1,44 @@
 {
   "jobs": [
     {
-      "id": 1,
-      "title": "Front-end Developers",
-      "category": " Front-End",
-      "location": " Quận 3, Hồ Chí Minh",
-      "description": "Công việc hấp dẫn",
-      "date": "22 June",
-      "status": "active",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
-    },
-    {
-      "id": 3,
-      "title": "[Senior] Front-end Developer",
-      "category": "Front-End",
-      "location": " Quận Hoàn Kiếm, Hà Nội",
-      "description": "Final Fantasy XVI is yours, where you can do anything without law, become to anyone that you want.",
-      "date": "10 June",
-      "status": "active",
-      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN"
-    },
-    {
-      "id": 4,
-      "title": "(Angular, React)",
-      "category": "AngularJS",
-      "location": " Quận Bắc Từ Liêm, Hà Nội",
-      "description": "Dream job to front end developer, you can do what you want but still control situation.",
-      "date": "5 July",
-      "status": "active",
-      "logo": "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
-    },
-    {
       "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
       "title": "Gundam Aerial",
       "date": "2023-07-10T01:35:46.790Z",
       "category": "marketing",
       "location": "da nang",
-      "description": "scdscssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+      "description": "Dream job to front end developer, you can do what you want but still control situation",
       "status": "active",
       "id": 5
+    },
+    {
+      "logo": "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png",
+      "title": "Full snack dev",
+      "date": "2023-07-10T01:42:36.249Z",
+      "category": "developer",
+      "location": "London",
+      "description": "Final Fantasy XVI is yours, where you can do anything without law, become to anyone that you want.",
+      "status": "active",
+      "id": 6
+    },
+    {
+      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
+      "title": "Tekkadan",
+      "date": "2023-07-10T01:52:47.917Z",
+      "category": "marketing",
+      "location": "Mercury",
+      "description": "Final Fantasy XVI is yours, where you can do anything without law, become to anyone that you want.",
+      "status": "active",
+      "id": 7
+    },
+    {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+      "title": "Marketing weapon",
+      "date": "2023-07-10T02:07:43.263Z",
+      "category": "marketing",
+      "location": "USA",
+      "description": "Plan your marketing arsenal, put everything in a marketing calendar, evaluate what works and what doesn't, and adjust accordingly. Repeat what works, fix what doesn't and eliminate when necessary.",
+      "status": "active",
+      "id": 8
     }
   ]
 }
