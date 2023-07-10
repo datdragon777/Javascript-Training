@@ -16,10 +16,7 @@ export default class JobView {
     const fragment = document.createDocumentFragment();
 
     jobData.forEach((job) => {
-      const li = document.createElement("li");
-
-      li.innerHTML = this.template.jobItem(job)
-
+      const li= this.template.jobItem(job)
       fragment.appendChild(li);
     });
 
