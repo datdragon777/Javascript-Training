@@ -39,6 +39,36 @@
       "description": "Plan your marketing arsenal, put everything in a marketing calendar, evaluate what works and what doesn't, and adjust accordingly. Repeat what works, fix what doesn't and eliminate when necessary.",
       "status": "active",
       "id": 8
+    },
+    {
+      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
+      "title": "Gundam unicorn ",
+      "date": "2023-07-10T03:18:52.703Z",
+      "category": "developer",
+      "location": "new york",
+      "description": "Plan your marketing arsenal, put everything in a marketing calendar, evaluate what works and what doesn't, and adjust accordingly. Repeat what works, fix what doesn't and eliminate when necessary.",
+      "status": "active",
+      "id": 9
+    },
+    {
+      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
+      "title": "Gundam Aerial",
+      "date": "2023-07-10T04:59:10.183Z",
+      "category": "marketing",
+      "location": "abadbadb",
+      "description": "dđ",
+      "status": "active",
+      "id": 10
+    },
+    {
+      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
+      "title": "Dat job",
+      "date": "2023-07-10T07:21:39.074Z",
+      "category": "developer",
+      "location": "Vitnam",
+      "description": "Apply knowledge of HTML5/CSS3/JavaScript (with ES6 syntax).",
+      "status": "active",
+      "id": 11
     }
   ]
 }
