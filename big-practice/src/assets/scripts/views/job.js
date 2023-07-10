@@ -140,7 +140,7 @@ export default class JobView {
   addJobView(handle) {
     this.form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      if (!this.validationForm()) {
+      if (!validationForm()) {
         return;
       }
 
@@ -161,7 +161,7 @@ export default class JobView {
         this.displayJob(newJob);
         this.resetForm();
       } catch (err) {
-        console.error(err);
+        return err;
       }
     });
   }
