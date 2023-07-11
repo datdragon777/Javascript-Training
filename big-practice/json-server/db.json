@@ -41,26 +41,6 @@
       "id": 8
     },
     {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "Test title",
-      "date": "2023-07-10T09:28:58.252Z",
-      "category": "design",
-      "location": "Tokyo",
-      "description": "The Graphic Designer job description includes the entire process of defining requirements, visualizing and creating graphics including illustrations, logos, layouts and photos. You'll be the one to shape the visual aspects of websites, books, magazines, product packaging, exhibitions and more.",
-      "status": "active",
-      "id": 12
-    },
-    {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "Hatabana",
-      "date": "2023-07-10T09:35:07.270Z",
-      "category": "developer",
-      "location": "Kyoto",
-      "description": "Kyoto, located in the Kansai region of Japan, is the country's seventh largest city, with a population of 1.4 million people.",
-      "status": "active",
-      "id": 13
-    },
-    {
       "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
       "title": "Google dev",
       "date": "2023-07-10T10:14:52.541Z",
@@ -69,6 +49,16 @@
       "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
       "status": "active",
       "id": 14
+    },
+    {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
+      "title": "Google marketing",
+      "date": "2023-07-11T01:45:48.071Z",
+      "category": "marketing",
+      "location": "da nang",
+      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible",
+      "status": "active",
+      "id": 15
     }
   ]
 }

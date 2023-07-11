@@ -2,22 +2,22 @@ import { validationForm, clearValidationStyles } from "../helpers/validation";
 
 export default class JobView {
   constructor(template) {
-    this.template = template
+    this.template = template;
 
     // Form
     this.createJobBtn = document.getElementById("create-job__btn");
-    this.formBg = document.getElementById("form__bg");
+    this.formBgCreate = document.getElementById("form__bg--create");
     this.formContent = document.getElementById("form__content");
     this.form = document.getElementById("form");
     this.jobUl = document.getElementById("job__list");
   }
 
-  async listJob(jobData) {
+  listJob(jobData) {
     const fragment = document.createDocumentFragment();
 
     jobData.forEach((job) => {
-      const li= this.template.jobItem(job)
-      fragment.appendChild(li);
+      const jobItem = this.template.jobItem(job);
+      fragment.appendChild(jobItem);
     });
 
     this.jobUl.appendChild(fragment);
@@ -27,7 +27,7 @@ export default class JobView {
     this.createJobBtn.addEventListener("click", () => {
       this.form.reset();
       clearValidationStyles();
-      this.formBg.classList.add("is-visible");
+      this.formBgCreate.classList.add("is-visible");
     });
   }
 
@@ -39,7 +39,7 @@ export default class JobView {
         !this.formContent.contains(targetElement) &&
         targetElement !== this.createJobBtn
       ) {
-        this.formBg.classList.remove("is-visible");
+        this.formBgCreate.classList.remove("is-visible");
       }
     });
   }
@@ -65,7 +65,7 @@ export default class JobView {
       try {
         const newJob = await handle(jobValue);
         console.log(newJob);
-        this.displayJob(newJob);
+        this.displayJobItem(newJob);
         this.formBg.classList.remove("is-visible");
       } catch (err) {
         return err;
@@ -73,10 +73,18 @@ export default class JobView {
     });
   }
 
-  displayJob(job) {
-    const jobItem = document.createElement("li");
-    jobItem.innerHTML = this.template.jobItem(job)
-
+  displayJobItem(job) {
+    const jobItem = this.template.jobItem(job);
     this.jobUl.appendChild(jobItem);
+  }
+
+  openUpdatePopup() {
+    this.jobUl.addEventListener("click", (e) => {
+      const jobLink = e.target.closest("#card__link");
+      if (jobLink) {
+        const updateForm = this.template.jobUpdate();
+        console.log(updateForm);
+      }
+    });
   }
 }
