@@ -3,3 +3,19 @@
   font-size: var(--fs-lg);
   margin-bottom: 35px;
 }
+
+.heading__title--create {
+  display: block;
+}
+
+.heading__title--update {
+  display: none;
+}
+
+.heading__title--create.is-hidden {
+  display: none;
+}
+
+.heading__title--update.is-show {
+  display: block;
+}

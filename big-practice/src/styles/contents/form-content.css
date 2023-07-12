@@ -8,15 +8,10 @@
   display: flex;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
   z-index: 10000;
-}
-
-.form__bg--create,
-.form__bg--update {
   visibility: hidden;
 }
 
-.form__bg--create.is-visible,
-.form__bg--update.is-visible {
+.form__bg.is-visible {
   visibility: visible;
 }
 
@@ -115,4 +110,17 @@
 .input__group.form__error textarea,
 .input__group.form__error input {
   border-color: var(--cl-alert);
+}
+
+.form__group--update {
+  display: none;
+}
+
+.form__group--update.is-show {
+  display: block;
+}
+
+.status__value {
+  margin-right: 25px;
+  cursor: pointer;
 }

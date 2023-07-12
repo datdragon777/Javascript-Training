@@ -13,12 +13,29 @@
   background-color: var(--cl-status-cover);
 }
 
+.btn__update,
 .btn__create {
   color: var(--cl-primary);
   background-color: var(--cl-btn);
 }
 
 .btn__create:hover,
-.btn__back:hover {
+.btn__update:hover {
   transform: scale(1.05);
+}
+
+.btn__create {
+  display: block;
+}
+
+.btn__update {
+  display: none;
+}
+
+.btn__create.is-hidden{
+  display: none;
+}
+
+.btn__update.is-show {
+  display: block;
 }

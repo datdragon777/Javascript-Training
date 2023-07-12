@@ -6,10 +6,15 @@ export default class JobView {
 
     // Form
     this.createJobBtn = document.getElementById("create-job__btn");
-    this.formBgCreate = document.getElementById("form__bg--create");
+    this.formBg = document.getElementById("form__bg");
     this.formContent = document.getElementById("form__content");
     this.form = document.getElementById("form");
     this.jobUl = document.getElementById("job__list");
+    this.titleCreateForm = document.getElementById("heading__title--create")
+    this.titleUpdateForm = document.getElementById("heading__title--update")
+    this.btnCreateForm = document.getElementById("btn__create")
+    this.btnUpdateForm = document.getElementById("btn__update")
+    this.statusFormGroup = document.getElementById("form__group--update")
   }
 
   listJob(jobData) {
@@ -23,15 +28,20 @@ export default class JobView {
     this.jobUl.appendChild(fragment);
   }
 
-  openFormPopup() {
+  openCreateFormPopup() {
     this.createJobBtn.addEventListener("click", () => {
       this.form.reset();
       clearValidationStyles();
-      this.formBgCreate.classList.add("is-visible");
+      this.titleCreateForm.classList.remove("is-hidden")
+      this.titleUpdateForm.classList.remove("is-show")
+      this.btnCreateForm.classList.remove("is-hidden")
+      this.btnUpdateForm.classList.remove("is-show")
+      this.statusFormGroup.classList.remove("is-show")
+      this.formBg.classList.add("is-visible");
     });
   }
 
-  closeFormPopup() {
+  closeCreateFormPopup() {
     document.addEventListener("mousedown", (event) => {
       const targetElement = event.target;
       if (
@@ -39,13 +49,13 @@ export default class JobView {
         !this.formContent.contains(targetElement) &&
         targetElement !== this.createJobBtn
       ) {
-        this.formBgCreate.classList.remove("is-visible");
+        this.formBg.classList.remove("is-visible");
       }
     });
   }
 
   addJobView(handle) {
-    this.form.addEventListener("submit", async (e) => {
+    this.btnCreateForm.addEventListener("click", async (e) => {
       e.preventDefault();
       if (!validationForm()) {
         return;
@@ -62,14 +72,10 @@ export default class JobView {
       };
       console.log(jobValue);
 
-      try {
-        const newJob = await handle(jobValue);
-        console.log(newJob);
-        this.displayJobItem(newJob);
-        this.formBg.classList.remove("is-visible");
-      } catch (err) {
-        return err;
-      }
+      const newJob = await handle(jobValue);
+      console.log(newJob);
+      this.displayJobItem(newJob);
+      this.formBg.classList.remove("is-visible");
     });
   }
 
@@ -78,13 +84,21 @@ export default class JobView {
     this.jobUl.appendChild(jobItem);
   }
 
-  openUpdatePopup() {
+  openUpdateFormPopup(handle) {
     this.jobUl.addEventListener("click", (e) => {
       const jobLink = e.target.closest("#card__link");
       if (jobLink) {
-        const updateForm = this.template.jobUpdate();
-        console.log(updateForm);
+        clearValidationStyles();
+        this.titleCreateForm.classList.add("is-hidden")
+        this.titleUpdateForm.classList.add("is-show")
+        this.btnCreateForm.classList.add("is-hidden")
+        this.btnUpdateForm.classList.add("is-show")
+        this.statusFormGroup.classList.add("is-show")
+        this.formBg.classList.add("is-visible");
       }
     });
   }
+
+
+
 }

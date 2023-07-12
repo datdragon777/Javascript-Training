@@ -100,9 +100,20 @@
       <!-- End Main Content -->
 
       <!-- Start Form Layout -->
-      <div class="form__bg form__bg--create" id="form__bg--create">
+      <div class="form__bg" id="form__bg">
         <div class="form__content" id="form__content">
-          <h2 class="heading__title">Create new job</h2>
+          <h2
+            class="heading__title heading__title--create"
+            id="heading__title--create"
+          >
+            Create new job
+          </h2>
+          <h2
+            class="heading__title heading__title--update"
+            id="heading__title--update"
+          >
+            Update job
+          </h2>
           <form class="form" id="form">
             <!-- Logo -->
             <div class="form__group">
@@ -188,14 +199,36 @@
                 <div class="form__error"></div>
               </div>
             </div>
+            <!-- Status -->
+            <div
+              class="form__group form__group--update"
+              id="form__group--update"
+            >
+              <label class="form__name">Status</label>
+              <div class="input__group">
+                <input type="radio" id="status__active" value="active" name="status" checked/>
+                <label for="status__active" class="status__value">Active</label>
+
+                <input type="radio" id="status__completed" value="completed" name="status" />
+                <label for="status__completed" class="status__value">Completed</label>
+
+                <input type="radio" id="status__unfinished" value="unfinished" name="status" />
+                <label for="status__unfinished" class="status__value">Unfinished</label>
+              </div>
+            </div>
+
             <!-- Submit Button -->
             <div class="form__btn">
-              <button type="submit" class="btn btn__create">Create</button>
+              <button type="submit" class="btn btn__create" id="btn__create">
+                Create
+              </button>
+              <button type="submit" class="btn btn__update" id="btn__update">
+                Update
+              </button>
             </div>
           </form>
         </div>
       </div>
-
       <!-- End Form Layout -->
     </div>
     <!-- End Content Wrapper -->
