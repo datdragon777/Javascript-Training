@@ -1,64 +1,44 @@
 {
   "jobs": [
     {
-      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
-      "title": "Gundam Axios",
-      "date": "2023-07-13T03:34:02.756Z",
-      "category": "marketing",
-      "location": "da nang",
-      "description": "Dream job to front end developer, you can do what you want but still control situation",
-      "status": "completed",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
+      "title": "Google dev 2.0",
+      "date": "2023-07-13T09:58:51.010Z",
+      "category": "developer",
+      "location": "Global",
+      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
+      "status": "active",
       "id": 5
     },
     {
-      "logo": "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png",
-      "title": "Full snack dev",
-      "date": "2023-07-10T01:42:36.249Z",
+      "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
+      "title": "Slack",
+      "date": "2023-07-13T10:01:17.520Z",
       "category": "developer",
-      "location": "London",
-      "description": "Final Fantasy XVI is yours, where you can do anything without law, become to anyone that you want.",
-      "status": "active",
+      "location": "U.S",
+      "description": "Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate.\n",
+      "status": "completed",
       "id": 6
     },
     {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "Marketing weapon",
-      "date": "2023-07-10T02:07:43.263Z",
-      "category": "marketing",
-      "location": "USA",
-      "description": "Plan your marketing arsenal, put everything in a marketing calendar, evaluate what works and what doesn't, and adjust accordingly. Repeat what works, fix what doesn't and eliminate when necessary.",
-      "status": "active",
-      "id": 8
-    },
-    {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
-      "title": "Google dev",
-      "date": "2023-07-10T10:14:52.541Z",
-      "category": "developer",
-      "location": "da nang",
-      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
-      "status": "active",
-      "id": 14
-    },
-    {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "Google marketing",
-      "date": "2023-07-12T03:38:36.146Z",
-      "category": "marketing",
-      "location": "Tokyo",
-      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
-      "status": "active",
-      "id": 15
-    },
-    {
       "logo": "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png",
-      "title": "AI Danang",
-      "date": "2023-07-12T07:17:15.037Z",
-      "category": "developer",
-      "location": "Danang",
-      "description": "Artificial intelligence (AI) is the ability of a computer or a robot controlled by a computer to do tasks that are usually done by humans because they require human intelligence and discernment.",
-      "status": "active",
-      "id": 16
+      "title": "Linkedin",
+      "date": "2023-07-13T10:01:30.502Z",
+      "category": "design",
+      "location": "New Jersey",
+      "description": "Writing a LinkedIn summary is incredibly difficult — especially without examples to look at. Should you recount your prior roles? List your accomplishments? Should it be written in first person? Or in third?",
+      "status": "unfinished",
+      "id": 7
+    },
+    {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+      "title": "Spotify",
+      "date": "2023-07-13T10:01:46.620Z",
+      "category": "design",
+      "location": "Japan",
+      "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.",
+      "status": "completed",
+      "id": 8
     }
   ]
 }

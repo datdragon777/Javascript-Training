@@ -15,6 +15,7 @@ export default class JobView {
     this.btnCreateForm = document.getElementById("btn__create");
     this.btnUpdateForm = document.getElementById("btn__update");
     this.statusFormGroup = document.getElementById("form__group--update");
+    this.jobId;
   }
 
   listJob(jobData) {
@@ -28,9 +29,6 @@ export default class JobView {
     this.jobUl.appendChild(fragment);
   }
 
-  /**
-   * cmt
-   */
   openCreateFormPopup() {
     this.createJobBtn.addEventListener("click", () => {
       this.form.reset();
@@ -92,8 +90,8 @@ export default class JobView {
 
       if (jobLink) {
         clearValidationStyles();
-        const jobId = jobItem.getAttribute("data-id");
-        const response = await handleGetJobById(jobId);
+        this.jobId = jobItem.getAttribute("data-id");
+        const response = await handleGetJobById(this.jobId);
 
         this.form.querySelector('input[name="logo-path"]').value =
           response.logo;
@@ -114,13 +112,13 @@ export default class JobView {
           }
         }
 
+        this.titleCreateForm.classList.add("is-hidden");
+        this.titleUpdateForm.classList.add("is-show");
+        this.btnCreateForm.classList.add("is-hidden");
+        this.btnUpdateForm.classList.add("is-show");
+        this.statusFormGroup.classList.add("is-show");
+        this.formBg.classList.add("is-visible");
       }
-      this.titleCreateForm.classList.add("is-hidden");
-      this.titleUpdateForm.classList.add("is-show");
-      this.btnCreateForm.classList.add("is-hidden");
-      this.btnUpdateForm.classList.add("is-show");
-      this.statusFormGroup.classList.add("is-show");
-      this.formBg.classList.add("is-visible");
     });
   }
 
@@ -138,15 +136,12 @@ export default class JobView {
         category: document.getElementById("select__menu").value,
         location: document.getElementById("input__location").value,
         description: document.getElementById("input__description").value,
-        status: this.form.querySelector('input[name="status"]:checked').value
+        status: this.form.querySelector('input[name="status"]:checked').value,
       };
-
-      const jobItem = document.querySelector(".job__item");
-      const jobId = jobItem.getAttribute("data-id");
-      const updateJob = await handleUpdateJob(jobId, jobUpdateValue);
+      const updateJob = await handleUpdateJob(this.jobId, jobUpdateValue);
       console.log(updateJob);
-      this.displayJobItem(updateJob);
       this.formBg.classList.remove("is-visible");
-    })
+      location.reload();
+    });
   }
 }

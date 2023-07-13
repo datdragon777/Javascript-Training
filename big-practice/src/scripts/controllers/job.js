@@ -15,7 +15,7 @@ export default class JobContoller {
     // CRUD
     this.handleListJob();
     this.jobView.addJobView(this.handleAddJob.bind(this));
-    this.jobView.updateJobView(this.handleUpdateJob.bind(this))
+    this.jobView.updateJobView(this.handleUpdateJob.bind(this));
   }
 
   async handleListJob() {
@@ -32,6 +32,6 @@ export default class JobContoller {
   }
 
   async handleUpdateJob(id, data) {
-    return await this.jobModel.updateJobModel(id, data)
+    return await this.jobModel.updateJobModel(id, data);
   }
 }
