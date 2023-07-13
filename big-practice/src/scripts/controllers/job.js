@@ -10,11 +10,12 @@ export default class JobContoller {
     // Form Popup
     this.jobView.openCreateFormPopup();
     this.jobView.closeCreateFormPopup();
-    // this.jobView.openUpdateFormPopup(this.handleUpdateJob.bind(this));
+    this.jobView.openUpdateFormPopup(this.handleGetJobById.bind(this));
 
     // CRUD
-    this.handldeListJob();
-    this.jobView.adJobView(this.handleAddJob.bind(this));
+    this.handleListJob();
+    this.jobView.addJobView(this.handleAddJob.bind(this));
+    this.jobView.updateJobView(this.handleUpdateJob.bind(this))
   }
 
   async handleListJob() {
@@ -26,9 +27,11 @@ export default class JobContoller {
     return await this.jobModel.addJobModel(data);
   }
 
-  // async handleUpdateJob(id) {
-  //   return this.jobModel.getJobByIdModel(id)
-  // }
+  async handleGetJobById(id) {
+    return await this.jobModel.getJobByIdModel(id);
+  }
 
-
+  async handleUpdateJob(id, data) {
+    return await this.jobModel.updateJobModel(id, data)
+  }
 }

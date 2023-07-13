@@ -1,4 +1,9 @@
-import { getJobsService, addJobService, getJobByIdService, updateJobService } from "../services/job";
+import {
+  getJobsService,
+  addJobService,
+  getJobByIdService,
+  updateJobService,
+} from "../services/job";
 
 export default class JobModel {
   constructor() {
@@ -16,10 +21,9 @@ export default class JobModel {
   }
 
   async getJobsModel() {
-    const response = await getJobsService()
-    this.jobs = response
-
-    return response
+    const response = await getJobsService();
+    this.jobs = response;
+    return response;
   }
 
   async addJobModel(jobData) {
@@ -30,9 +34,9 @@ export default class JobModel {
     return await getJobByIdService(id);
   }
 
-  // async updateJobModel(id, jobData) {
-  //   return await updateJobService(id, jobData)
-  // }
+  async updateJobModel(id, jobData) {
+    return await updateJobService(id, jobData)
+  }
 
   // deleteJob(id) {
   //   this.jobs = this.jobs.filter(job => job.id !== id);

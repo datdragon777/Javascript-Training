@@ -1,9 +1,44 @@
+import MessageString from "../constants/messegeString";
+
 const formElements = [
-  { element: document.getElementById("input__logo"), message: "Logo image URL is required" },
-  { element: document.getElementById("input__title"), message: "Title is required" },
-  { element: document.getElementById("input__location"), message: "Location is required" },
-  { element: document.getElementById("select__menu"), message: "Category is required" },
-  { element: document.getElementById("input__description"), message: "Description is required" }
+  {
+    element: document.getElementById("input__logo"),
+    paramName: "Logo",
+    rule: {
+      isRequired: true
+    },
+  },
+  {
+    element: document.getElementById("input__title"),
+    paramName: "Title",
+    rule: {
+      isRequired: true,
+      maxLength: 100,
+    },
+  },
+  {
+    element: document.getElementById("input__location"),
+    paramName: "Location",
+    rule: {
+      isRequired: true,
+    },
+  },
+  {
+    element: document.getElementById("select__menu"),
+    paramName: "Category",
+    rule: {
+      isRequired: true,
+      mustIn: ["active", "unfinished", "completed"],
+    },
+  },
+  {
+    element: document.getElementById("input__description"),
+    paramName: "Description",
+    rule: {
+      isRequired: true,
+      maxLength: 500,
+    },
+  },
 ];
 
 const setError = (element, message) => {
@@ -24,14 +59,26 @@ const setSuccess = (element) => {
   inputControl.classList.remove("form__error");
 };
 
+/**
+ * Return true when empty string or array
+ * @param {string | array} str
+ * @returns if empty, return True.
+ */
+export const isEmpty = (str) => {
+  if (str === "" || str === null || str === undefined || str === [])
+    return true;
+  return false;
+};
+
 export const validationForm = () => {
   let isValid = true;
 
-  formElements.forEach(({ element, message }) => {
+  formElements.forEach(({ element, paramName, rule }) => {
     const value = element.value.trim();
 
-    if (value === "") {
-      setError(element, message);
+    // check empty
+    if (!!rule.isRequired && isEmpty(value)) {
+      setError(element, MessageString.MSGE00001(paramName));
       isValid = false;
     } else {
       setSuccess(element);

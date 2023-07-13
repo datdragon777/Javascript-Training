@@ -124,6 +124,7 @@
                   class="input__place"
                   id="input__logo"
                   placeholder="Enter link logo"
+                  name="logo-path"
                 />
                 <div class="form__error"></div>
               </div>
@@ -137,6 +138,8 @@
                   class="input__place"
                   id="input__title"
                   placeholder="Enter title of job"
+                  name="title"
+                  maxlength="100"
                 />
                 <div class="form__error"></div>
               </div>
@@ -150,6 +153,7 @@
                   class="input__place"
                   id="input__location"
                   placeholder="Enter location of job"
+                  name="location"
                 />
                 <div class="form__error"></div>
               </div>
@@ -158,7 +162,7 @@
             <div class="form__group">
               <label class="form__name">Category</label>
               <div class="input__group">
-                <select class="select__menu" id="select__menu">
+                <select class="select__menu" id="select__menu" name="category">
                   <option class="select__value" id="select__value" value="">
                     Select your job
                   </option>
@@ -195,6 +199,7 @@
                   class="form__description"
                   id="input__description"
                   placeholder="Enter job description"
+                  name="description"
                 ></textarea>
                 <div class="form__error"></div>
               </div>
@@ -206,14 +211,33 @@
             >
               <label class="form__name">Status</label>
               <div class="input__group">
-                <input type="radio" id="status__active" value="active" name="status" checked/>
+                <input
+                  type="radio"
+                  id="status__active"
+                  value="active"
+                  name="status"
+                />
                 <label for="status__active" class="status__value">Active</label>
 
-                <input type="radio" id="status__completed" value="completed" name="status" />
-                <label for="status__completed" class="status__value">Completed</label>
+                <input
+                  type="radio"
+                  id="status__completed"
+                  value="completed"
+                  name="status"
+                />
+                <label for="status__completed" class="status__value"
+                  >Completed</label
+                >
 
-                <input type="radio" id="status__unfinished" value="unfinished" name="status" />
-                <label for="status__unfinished" class="status__value">Unfinished</label>
+                <input
+                  type="radio"
+                  id="status__unfinished"
+                  value="unfinished"
+                  name="status"
+                />
+                <label for="status__unfinished" class="status__value"
+                  >Unfinished</label
+                >
               </div>
             </div>
 

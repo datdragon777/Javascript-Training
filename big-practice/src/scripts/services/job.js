@@ -25,7 +25,7 @@ export const addJobService = async (jobData) => {
 };
 
 export const updateJobService = async (id, jobData) => {
-  const response = await fetch(`${baseUrrl}/${id}`, {
+  const response = await fetch(`${baseUrl}/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
