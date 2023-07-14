@@ -5,16 +5,25 @@ export default class JobView {
     this.template = template;
 
     // Form
-    this.createJobBtn = document.getElementById("create-job__btn");
     this.formBg = document.getElementById("form__bg");
     this.formContent = document.getElementById("form__content");
     this.form = document.getElementById("form");
-    this.jobUl = document.getElementById("job__list");
+    this.formConfirmDelete = document.getElementById("form-delete__bg");
     this.titleCreateForm = document.getElementById("heading__title--create");
     this.titleUpdateForm = document.getElementById("heading__title--update");
+
+    // Button
+    this.btnCreateJob = document.getElementById("create-job__btn");
     this.btnCreateForm = document.getElementById("btn__create");
     this.btnUpdateForm = document.getElementById("btn__update");
+    this.btnDeleteForm = document.getElementById("btn__delete");
+    this.btnConfirmDelete = document.getElementById("btn__confirm__delete");
+    this.btnSearch = document.getElementById("search__btn")
+
+    // Another
+    this.jobUl = document.getElementById("job__list");
     this.statusFormGroup = document.getElementById("form__group--update");
+    this.searchField = document.getElementById("search__field");
     this.jobId;
   }
 
@@ -25,32 +34,33 @@ export default class JobView {
       const jobItem = this.template.jobItem(job);
       fragment.appendChild(jobItem);
     });
-
     this.jobUl.appendChild(fragment);
   }
 
   openCreateFormPopup() {
-    this.createJobBtn.addEventListener("click", () => {
+    this.btnCreateJob.addEventListener("click", () => {
       this.form.reset();
       clearValidationStyles();
       this.titleCreateForm.classList.remove("is-hidden");
       this.titleUpdateForm.classList.remove("is-show");
       this.btnCreateForm.classList.remove("is-hidden");
       this.btnUpdateForm.classList.remove("is-show");
+      this.btnDeleteForm.classList.remove("is-show");
       this.statusFormGroup.classList.remove("is-show");
       this.formBg.classList.add("is-visible");
     });
   }
 
-  closeCreateFormPopup() {
+  closeFormPopup() {
     document.addEventListener("mousedown", (event) => {
       const targetElement = event.target;
       if (
         targetElement !== this.formContent &&
         !this.formContent.contains(targetElement) &&
-        targetElement !== this.createJobBtn
+        targetElement !== this.btnCreateJob
       ) {
         this.formBg.classList.remove("is-visible");
+        this.formConfirmDelete.classList.remove("is-visible");
       }
     });
   }
@@ -116,6 +126,7 @@ export default class JobView {
         this.titleUpdateForm.classList.add("is-show");
         this.btnCreateForm.classList.add("is-hidden");
         this.btnUpdateForm.classList.add("is-show");
+        this.btnDeleteForm.classList.add("is-show");
         this.statusFormGroup.classList.add("is-show");
         this.formBg.classList.add("is-visible");
       }
@@ -143,5 +154,37 @@ export default class JobView {
       this.formBg.classList.remove("is-visible");
       location.reload();
     });
+  }
+
+  openDeletePopup() {
+    this.btnDeleteForm.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.formBg.classList.remove("is-visible");
+      this.formConfirmDelete.classList.add("is-visible");
+    });
+  }
+
+  deleteJobView(handleDeleteJob) {
+    this.btnConfirmDelete.addEventListener("click", () => {
+      handleDeleteJob(this.jobId);
+      location.reload();
+    });
+  }
+
+  searchJobView(jobData) {
+    console.log(jobData);
+    this.searchField.addEventListener("keyup", () => {
+      const cards = document.querySelectorAll("#job__item");
+      const titles = document.querySelectorAll("#card__title");
+      const searchValue = this.searchField.value.toLowerCase()
+
+      titles.forEach((title, index) => {
+        if (title.innerText.includes(searchValue)) {
+          cards[index].style.display = "block"
+        } else {
+          cards[index].style.display = "none"
+        }
+      })
+    })
   }
 }

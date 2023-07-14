@@ -36,7 +36,7 @@ export const updateJobService = async (id, jobData) => {
   return updatedJob;
 };
 
-export const deleteJob = async (id) => {
+export const deleteJobService = async (id) => {
   const response = await fetch(`${baseUrl}/${id}`, {
     method: "DELETE",
   });

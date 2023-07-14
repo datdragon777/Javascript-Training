@@ -3,6 +3,7 @@ import {
   addJobService,
   getJobByIdService,
   updateJobService,
+  deleteJobService,
 } from "../services/job";
 
 export default class JobModel {
@@ -35,10 +36,10 @@ export default class JobModel {
   }
 
   async updateJobModel(id, jobData) {
-    return await updateJobService(id, jobData)
+    return await updateJobService(id, jobData);
   }
 
-  // deleteJob(id) {
-  //   this.jobs = this.jobs.filter(job => job.id !== id);
-  // }
+  async deleteJobModel(id) {
+    return await deleteJobService(id);
+  }
 }

@@ -8,9 +8,9 @@
   cursor: pointer;
 }
 
-.btn__back {
-  color: var(--cl-secondary);
-  background-color: var(--cl-status-cover);
+.btn__delete {
+  color: var(--cl-primary);
+  background-color: #dd0305;
 }
 
 .btn__update,
@@ -20,7 +20,9 @@
 }
 
 .btn__create:hover,
-.btn__update:hover {
+.btn__update:hover,
+.btn__delete:hover,
+.btn__cancel:hover {
   transform: scale(1.05);
 }
 
@@ -28,6 +30,7 @@
   display: block;
 }
 
+.btn__delete,
 .btn__update {
   display: none;
 }
@@ -36,6 +39,7 @@
   display: none;
 }
 
+.btn__delete.is-show,
 .btn__update.is-show {
   display: block;
 }
