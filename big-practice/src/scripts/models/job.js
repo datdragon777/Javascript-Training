@@ -9,16 +9,6 @@ import {
 export default class JobModel {
   constructor() {
     this.jobs = [];
-    this.job = {
-      id: "",
-      logo: "",
-      title: "",
-      date: new Date(),
-      category: "",
-      location: "",
-      description: "",
-      status: "active",
-    };
   }
 
   async getJobsModel() {

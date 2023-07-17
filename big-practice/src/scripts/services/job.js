@@ -1,3 +1,5 @@
+import { isSuccess } from "./base";
+
 const baseUrl = "http://localhost:3000/jobs";
 
 export const getJobsService = async () => {
@@ -32,12 +34,19 @@ export const updateJobService = async (id, jobData) => {
     },
     body: JSON.stringify(jobData),
   });
-  const updatedJob = await response.json();
-  return updatedJob;
+
+  if (isSuccess(response)) {
+    return await getJobsService();
+  }
+  return null;
 };
 
 export const deleteJobService = async (id) => {
   const response = await fetch(`${baseUrl}/${id}`, {
     method: "DELETE",
   });
+  if (isSuccess(response)) {
+    return await getJobsService();
+  }
+  return null;
 };

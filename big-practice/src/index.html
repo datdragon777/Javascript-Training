@@ -76,14 +76,14 @@
         <!-- Start List Content -->
         <div class="list__content" id="list__content">
           <h1 class="heading__title">Jobs</h1>
-          <div class="btn__box">
-            <button class="btn btn__item">
+          <div class="btn__box" id="btn__box">
+            <button class="btn btn__item btn__filter" id="btn__filter" data-filter="active">
               Active Jobs<span class="item__quantity">00</span>
             </button>
-            <button class="btn btn__item">
+            <button class="btn btn__item btn__filter" id="btn__filter" data-filter="completed">
               Completed<span class="item__quantity">00</span>
             </button>
-            <button class="btn btn__item">
+            <button class="btn btn__item btn__filter" id="btn__filter" data-filter="unfinished">
               Unfinished<span class="item__quantity">00</span>
             </button>
           </div>
@@ -110,6 +110,8 @@
             Update job
           </h2>
           <form class="form" id="form">
+            <!-- id -->
+            <input type="hidden" id="input__id" name="id">
             <!-- Logo -->
             <div class="form__group">
               <label class="form__name">Logo</label>
@@ -265,6 +267,10 @@
       <!-- End Delete Popup -->
     </div>
     <!-- End Content Wrapper -->
+
+    <!-- Start Modal Loading -->
+    <div class="modal"><span class="text-loading">Loading...</span></div>
+    <!-- End Modal Loading -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script type="module" src="./scripts/index.js"></script>

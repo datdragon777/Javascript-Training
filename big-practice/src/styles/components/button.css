@@ -43,3 +43,7 @@
 .btn__update.is-show {
   display: block;
 }
+
+.btn__filter {
+  border-radius: 0;
+}

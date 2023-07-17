@@ -1,0 +1,26 @@
+.modal {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(70, 70, 70, 0.336) 50% 50% no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .text-loading {
+  font-size: var(--fs-lg);
+  color: var(--cl-primary);
+  font-weight: var(--fw-bold);
+}
+
+body.loading {
+  overflow: hidden;
+}
+body.loading .modal {
+  visibility: visible;
+}

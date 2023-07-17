@@ -70,6 +70,9 @@ export const isEmpty = (str) => {
   return false;
 };
 
+/**
+ * Check validation form
+ */
 export const validationForm = () => {
   let isValid = true;
 
@@ -88,6 +91,7 @@ export const validationForm = () => {
   return isValid;
 };
 
+// Clear all CSS validation
 export const clearValidationStyles = () => {
   formElements.forEach(({ element }) => {
     const inputControl = element.parentElement;

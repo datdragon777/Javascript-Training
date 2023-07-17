@@ -1,3 +1,4 @@
+import { qs } from "../helpers/query";
 import { validationForm, clearValidationStyles } from "../helpers/validation";
 
 export default class JobView {
@@ -5,30 +6,37 @@ export default class JobView {
     this.template = template;
 
     // Form
-    this.formBg = document.getElementById("form__bg");
-    this.formContent = document.getElementById("form__content");
-    this.form = document.getElementById("form");
-    this.formConfirmDelete = document.getElementById("form-delete__bg");
-    this.titleCreateForm = document.getElementById("heading__title--create");
-    this.titleUpdateForm = document.getElementById("heading__title--update");
+    this.formBg = qs("#form__bg");
+    this.formContent = qs("#form__content");
+    this.form = qs("#form");
+    this.formConfirmDelete = qs("#form-delete__bg");
+    this.titleCreateForm = qs("#heading__title--create");
+    this.titleUpdateForm = qs("#heading__title--update");
 
     // Button
-    this.btnCreateJob = document.getElementById("create-job__btn");
-    this.btnCreateForm = document.getElementById("btn__create");
-    this.btnUpdateForm = document.getElementById("btn__update");
-    this.btnDeleteForm = document.getElementById("btn__delete");
-    this.btnConfirmDelete = document.getElementById("btn__confirm__delete");
-    this.btnSearch = document.getElementById("search__btn")
+    this.btnCreateJob = qs("#create-job__btn");
+    this.btnCreateForm = qs("#btn__create");
+    this.btnUpdateForm = qs("#btn__update");
+    this.btnDeleteForm = qs("#btn__delete");
+    this.btnConfirmDelete = qs("#btn__confirm__delete");
+    this.btnSearch = qs("#search__btn");
+    this.btnFilter = qs("#btn__box")
 
     // Another
-    this.jobUl = document.getElementById("job__list");
-    this.statusFormGroup = document.getElementById("form__group--update");
-    this.searchField = document.getElementById("search__field");
-    this.jobId;
+    this.jobUl = qs("#job__list");
+    this.statusFormGroup = qs("#form__group--update");
+    this.searchField = qs("#search__field");
   }
 
+  /**
+   * Listing job item to show on screen
+   * @param {object} jobData
+   */
   listJob(jobData) {
     const fragment = document.createDocumentFragment();
+
+    const listItem = document.querySelectorAll("#job__list .job__item");
+    listItem.forEach((item) => item.remove());
 
     jobData.forEach((job) => {
       const jobItem = this.template.jobItem(job);
@@ -37,6 +45,7 @@ export default class JobView {
     this.jobUl.appendChild(fragment);
   }
 
+  // Open create form popup
   openCreateFormPopup() {
     this.btnCreateJob.addEventListener("click", () => {
       this.form.reset();
@@ -51,6 +60,7 @@ export default class JobView {
     });
   }
 
+  // Close form popup
   closeFormPopup() {
     document.addEventListener("mousedown", (event) => {
       const targetElement = event.target;
@@ -65,6 +75,11 @@ export default class JobView {
     });
   }
 
+  /**
+   * Check validation and handle job add event
+   * @param {function} handleAddJob
+   * @returns if invalid, nothing return
+   */
   addJobView(handleAddJob) {
     this.btnCreateForm.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -73,36 +88,46 @@ export default class JobView {
       }
 
       const jobValue = {
-        logo: document.getElementById("input__logo").value,
-        title: document.getElementById("input__title").value,
+        logo: qs("#input__logo").value,
+        title: qs("#input__title").value,
         date: new Date(),
-        category: document.getElementById("select__menu").value,
-        location: document.getElementById("input__location").value,
-        description: document.getElementById("input__description").value,
+        category: qs("#select__menu").value,
+        location: qs("#input__location").value,
+        description: qs("#input__description").value,
         status: "active",
       };
-
-      const newJob = await handleAddJob(jobValue);
-      this.displayJobItem(newJob);
       this.formBg.classList.remove("is-visible");
+      const newJob = await this.loadingGlobal(handleAddJob(jobValue));
+      this.displayJobItem(newJob);
     });
   }
 
+  /**
+   * Add job item to list
+   * @param {object} job
+   */
   displayJobItem(job) {
     const jobItem = this.template.jobItem(job);
     this.jobUl.appendChild(jobItem);
   }
 
+  /**
+   * Open update form popup and fullfill infomations
+   * @param {funtion} handleGetJobById
+   */
   openUpdateFormPopup(handleGetJobById) {
     this.jobUl.addEventListener("click", async (e) => {
       const jobLink = e.target.closest("#card__link");
       const jobItem = e.target.closest(".job__item");
 
+      // console.log(jobItem.getAttribute("data-id"));
+
       if (jobLink) {
         clearValidationStyles();
-        this.jobId = jobItem.getAttribute("data-id");
-        const response = await handleGetJobById(this.jobId);
+        const jobId = jobItem.getAttribute("data-id");
+        const response = await handleGetJobById(jobId);
 
+        this.form.querySelector('input[name="id"]').value = jobId;
         this.form.querySelector('input[name="logo-path"]').value =
           response.logo;
         this.form.querySelector('input[name="title"]').value = response.title;
@@ -133,6 +158,12 @@ export default class JobView {
     });
   }
 
+  /**
+   * Handle update infomation of job
+   * @param {function} handleUpdateJob
+   * @param {string} jobUpdateValue.id
+   * @param {object} jobUpdateValue
+   */
   updateJobView(handleUpdateJob) {
     this.btnUpdateForm.addEventListener("click", async (e) => {
       e.preventDefault();
@@ -141,21 +172,31 @@ export default class JobView {
       }
 
       const jobUpdateValue = {
-        logo: document.getElementById("input__logo").value,
-        title: document.getElementById("input__title").value,
+        id: qs("#input__id").value,
+        logo: qs("#input__logo").value,
+        title: qs("#input__title").value,
         date: new Date(),
-        category: document.getElementById("select__menu").value,
-        location: document.getElementById("input__location").value,
-        description: document.getElementById("input__description").value,
+        category: qs("#select__menu").value,
+        location: qs("#input__location").value,
+        description: qs("#input__description").value,
         status: this.form.querySelector('input[name="status"]:checked').value,
       };
-      const updateJob = await handleUpdateJob(this.jobId, jobUpdateValue);
-      console.log(updateJob);
+
       this.formBg.classList.remove("is-visible");
-      location.reload();
+      const updateJob = await this.loadingGlobal(
+        handleUpdateJob(jobUpdateValue.id, jobUpdateValue)
+      );
+      // Update failure
+      if (updateJob == null) {
+        // TODO: show message failure
+      } else {
+        // Load list
+        this.listJob(updateJob);
+      }
     });
   }
 
+  // Open delete popup
   openDeletePopup() {
     this.btnDeleteForm.addEventListener("click", (e) => {
       e.preventDefault();
@@ -164,27 +205,99 @@ export default class JobView {
     });
   }
 
+  /**
+   * Delete job base in ID
+   * @param {function} handleDeleteJob
+   * @param {string} jobId
+   */
   deleteJobView(handleDeleteJob) {
-    this.btnConfirmDelete.addEventListener("click", () => {
-      handleDeleteJob(this.jobId);
-      location.reload();
+    this.btnConfirmDelete.addEventListener("click", async () => {
+      const jobId = qs("#input__id").value;
+      const deleteJob = await this.loadingGlobal(handleDeleteJob(jobId));
+      if (deleteJob == null) {
+        // TODO: show message failure
+      } else {
+        this.listJob(deleteJob);
+      }
     });
   }
 
-  searchJobView(jobData) {
-    console.log(jobData);
-    this.searchField.addEventListener("keyup", () => {
-      const cards = document.querySelectorAll("#job__item");
-      const titles = document.querySelectorAll("#card__title");
-      const searchValue = this.searchField.value.toLowerCase()
+  /**
+   * Search job by title
+   * @param {Array} jobList
+   */
+  searchJobView(jobList) {
+    this.searchField.addEventListener("input", async (e) => {
+      const value = e.target.value.trim();
+      var newJobList = [];
 
-      titles.forEach((title, index) => {
-        if (title.innerText.includes(searchValue)) {
-          cards[index].style.display = "block"
-        } else {
-          cards[index].style.display = "none"
+      // If no search, return all
+      if (value === "" || value == null || value == undefined) {
+        return this.listJob(jobList);
+      }
+
+      for await (const job of jobList) {
+        const isVisible = this.compareSearch(job.title, value);
+        if (isVisible) {
+          newJobList.push(job);
         }
-      })
+      }
+
+      this.listJob(newJobList);
+    });
+  }
+
+  filterJobView(jobList) {
+    this.btnFilter.addEventListener("click", async(e) => {
+      const filterValue = e.target.dataset.filter
+      var newListFilter = []
+
+      if (filterValue === "" || filterValue == null || filterValue == undefined) {
+        return this.listJob(jobList);
+      }
+
+      for await (const job of jobList) {
+        if (filterValue === job.status) {
+          newListFilter.push(job)
+        }
+      }
+      this.listJob(newListFilter)
     })
+  }
+
+  /**
+   * Compare search input value and job title
+   * @param {string} inputValue
+   * @param {string} jobTitle
+   * @returns true/false
+   */
+  compareSearch(inputValue, jobTitle) {
+    return inputValue.toLowerCase().includes(jobTitle.toLowerCase());
+  }
+
+  /**
+   * Executes a callback function while showing a loading indicator.
+   * @param {function} callbackFn - The callback function to be executed.
+   * @returns {Promise} - A promise that resolves with the result of the callback function.
+   */
+  async loadingGlobal(calbackFn) {
+    //fake sleep
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    if (typeof calbackFn == "object") {
+      // Open loading
+      document.body.classList.add("loading");
+      // fetch timeout response
+      await sleep(1000);
+
+      const tmp = await calbackFn;
+
+      // Close loading
+      document.body.classList.remove("loading");
+      return tmp;
+    }
+    return null;
   }
 }

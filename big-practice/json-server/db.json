@@ -1,19 +1,19 @@
 {
   "jobs": [
     {
+      "id": 5,
       "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
-      "title": "Google dev 2.0",
-      "date": "2023-07-14T09:57:31.164Z",
-      "category": "developer",
+      "title": "Google dev 3.0",
+      "date": "2023-07-17T09:40:35.003Z",
+      "category": "marketing",
       "location": "Global",
       "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
-      "status": "completed",
-      "id": 5
+      "status": "unfinished"
     },
     {
       "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
-      "title": "Slack black",
-      "date": "2023-07-14T09:15:19.436Z",
+      "title": "Slack black 3.0",
+      "date": "2023-07-16T08:55:19.983Z",
       "category": "developer",
       "location": "U.S",
       "description": "Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate.\n",
@@ -21,24 +21,24 @@
       "id": 6
     },
     {
+      "id": 7,
       "logo": "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png",
       "title": "Linkedin",
-      "date": "2023-07-13T10:01:30.502Z",
-      "category": "design",
+      "date": "2023-07-17T09:42:11.510Z",
+      "category": "marketing",
       "location": "New Jersey",
       "description": "Writing a LinkedIn summary is incredibly difficult — especially without examples to look at. Should you recount your prior roles? List your accomplishments? Should it be written in first person? Or in third?",
-      "status": "unfinished",
-      "id": 7
+      "status": "unfinished"
     },
     {
+      "id": 8,
       "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
       "title": "Spotify 2.0 ultimate designer MLEM",
-      "date": "2023-07-13T10:18:24.453Z",
+      "date": "2023-07-17T09:41:43.451Z",
       "category": "design",
       "location": "Japan",
       "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.",
-      "status": "completed",
-      "id": 8
+      "status": "unfinished"
     },
     {
       "logo": "https://www.freeiconspng.com/uploads/face-deadpool-icon-png-4.png",
@@ -49,6 +49,16 @@
       "description": "Deadpool is the alter ego of Wade Wilson, a disfigured Canadian mercenary with superhuman regenerative healing abilities. He is known for his tendency to joke incessantly and break the fourth wall for humorous effect.",
       "status": "active",
       "id": 9
+    },
+    {
+      "id": 10,
+      "logo": "https://inkythuatso.com/uploads/thumbnails/800/2021/11/logo-starbucks-inkythuatso-2-01-17-13-47-33.jpg",
+      "title": "Starbucks",
+      "date": "2023-07-17T02:40:22.609Z",
+      "category": "marketing",
+      "location": "Global",
+      "description": "Starbucks Corp (Starbucks) is a specialty coffee retailer. It roasts, markets, and retails specialty coffee. The company, through its stores, offers several blends of coffee, handcrafted beverages, merchandise, and food items.",
+      "status": "active"
     }
   ]
 }
