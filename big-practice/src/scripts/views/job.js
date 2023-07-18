@@ -20,7 +20,7 @@ export default class JobView {
     this.btnDeleteForm = qs("#btn__delete");
     this.btnConfirmDelete = qs("#btn__confirm__delete");
     this.btnSearch = qs("#search__btn");
-    this.btnFilter = qs("#btn__box")
+    this.btnFilter = qs("#btn__box");
 
     // Another
     this.jobUl = qs("#job__list");
@@ -43,6 +43,7 @@ export default class JobView {
       fragment.appendChild(jobItem);
     });
     this.jobUl.appendChild(fragment);
+    console.log(jobData);
   }
 
   // Open create form popup
@@ -97,7 +98,7 @@ export default class JobView {
         status: "active",
       };
       this.formBg.classList.remove("is-visible");
-      const newJob = await this.loadingGlobal(handleAddJob(jobValue));
+      const newJob = await handleAddJob(jobValue);
       this.displayJobItem(newJob);
     });
   }
@@ -183,8 +184,9 @@ export default class JobView {
       };
 
       this.formBg.classList.remove("is-visible");
-      const updateJob = await this.loadingGlobal(
-        handleUpdateJob(jobUpdateValue.id, jobUpdateValue)
+      const updateJob = await handleUpdateJob(
+        jobUpdateValue.id,
+        jobUpdateValue
       );
       // Update failure
       if (updateJob == null) {
@@ -213,7 +215,7 @@ export default class JobView {
   deleteJobView(handleDeleteJob) {
     this.btnConfirmDelete.addEventListener("click", async () => {
       const jobId = qs("#input__id").value;
-      const deleteJob = await this.loadingGlobal(handleDeleteJob(jobId));
+      const deleteJob = await handleDeleteJob(jobId);
       if (deleteJob == null) {
         // TODO: show message failure
       } else {
@@ -247,22 +249,30 @@ export default class JobView {
     });
   }
 
+  /**
+   *The filterJobView function is used to filter and display the job list based on a status of job.
+   * @param {object} jobList - job list to filter
+   */
   filterJobView(jobList) {
-    this.btnFilter.addEventListener("click", async(e) => {
-      const filterValue = e.target.dataset.filter
-      var newListFilter = []
+    this.btnFilter.addEventListener("click", async (e) => {
+      const filterValue = e.target.dataset.filter;
+      var newListFilter = [];
 
-      if (filterValue === "" || filterValue == null || filterValue == undefined) {
+      if (
+        filterValue === "" ||
+        filterValue == null ||
+        filterValue == undefined
+      ) {
         return this.listJob(jobList);
       }
 
       for await (const job of jobList) {
         if (filterValue === job.status) {
-          newListFilter.push(job)
+          newListFilter.push(job);
         }
       }
-      this.listJob(newListFilter)
-    })
+      this.listJob(newListFilter);
+    });
   }
 
   /**
@@ -273,31 +283,5 @@ export default class JobView {
    */
   compareSearch(inputValue, jobTitle) {
     return inputValue.toLowerCase().includes(jobTitle.toLowerCase());
-  }
-
-  /**
-   * Executes a callback function while showing a loading indicator.
-   * @param {function} callbackFn - The callback function to be executed.
-   * @returns {Promise} - A promise that resolves with the result of the callback function.
-   */
-  async loadingGlobal(calbackFn) {
-    //fake sleep
-    function sleep(ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    }
-
-    if (typeof calbackFn == "object") {
-      // Open loading
-      document.body.classList.add("loading");
-      // fetch timeout response
-      await sleep(1000);
-
-      const tmp = await calbackFn;
-
-      // Close loading
-      document.body.classList.remove("loading");
-      return tmp;
-    }
-    return null;
   }
 }
