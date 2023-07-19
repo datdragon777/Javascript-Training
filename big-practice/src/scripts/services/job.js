@@ -5,6 +5,7 @@ const baseUrl = "http://localhost:3000/jobs";
 export const getJobsService = async () => {
   const response = await fetch(baseUrl);
   const jobs = await response.json();
+  console.log("list service:", jobs);
   return jobs;
 };
 

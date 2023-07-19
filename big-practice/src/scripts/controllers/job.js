@@ -19,19 +19,21 @@ export default class JobContoller {
     this.jobView.addJobView(this.handleAddJob.bind(this));
     this.jobView.updateJobView(this.handleUpdateJob.bind(this));
     this.jobView.deleteJobView(this.handleDeleteJob.bind(this));
-
-    // Another feature
-    this.handleSearchJob();
-    this.handleFilterJob();
   }
 
   async handleListJob() {
     const jobData = await this.jobModel.getJobsModel();
     this.jobView.listJob(jobData);
+    this.jobView.searchJobView(jobData);
+    this.jobView.filterJobView(jobData);
+    this.jobView.countStatusView(jobData);
+    console.log("list controller", jobData);
   }
 
   async handleAddJob(data) {
-    return await proc(this.jobModel.addJobModel(data));
+    let $res = await proc(this.jobModel.addJobModel(data));
+    this.handleListJob();
+    return $res;
   }
 
   async handleGetJobById(id) {
@@ -39,19 +41,24 @@ export default class JobContoller {
   }
 
   async handleUpdateJob(id, data) {
-    return await proc(this.jobModel.updateJobModel(id, data));
+    let $res = await proc(this.jobModel.updateJobModel(id, data));
+    this.handleListJob();
+    return $res;
   }
+
   async handleDeleteJob(id) {
-    return await proc(this.jobModel.deleteJobModel(id));
+    let $res = await proc(this.jobModel.deleteJobModel(id));
+    this.handleListJob();
+    return $res;
   }
 
-  async handleSearchJob() {
-    const jobData = await this.jobModel.getJobsModel();
-    return proc(this.jobView.searchJobView(jobData));
-  }
+  // async handleSearchJob() {
+  //   const jobData = await this.jobModel.getJobsModel();
+  //   return proc(this.jobView.searchJobView(jobData));
+  // }
 
-  async handleFilterJob() {
-    const jobData = await this.jobModel.getJobsModel();
-    return proc(this.jobView.filterJobView(jobData));
-  }
+  // async handleFilterJob() {
+  //   const jobData = await this.jobModel.getJobsModel();
+  //   return proc(this.jobView.filterJobView(jobData));
+  // }
 }

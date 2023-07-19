@@ -26,6 +26,9 @@ export default class JobView {
     this.jobUl = qs("#job__list");
     this.statusFormGroup = qs("#form__group--update");
     this.searchField = qs("#search__field");
+    this.activeCount = qs("#active__count")
+    this.completedCount = qs("#completed__count")
+    this.unfinishedCount = qs("#unfinished__count")
   }
 
   /**
@@ -43,7 +46,7 @@ export default class JobView {
       fragment.appendChild(jobItem);
     });
     this.jobUl.appendChild(fragment);
-    console.log(jobData);
+    console.log("list view: ", jobData);
   }
 
   // Open create form popup
@@ -229,16 +232,15 @@ export default class JobView {
    * @param {Array} jobList
    */
   searchJobView(jobList) {
-    this.searchField.addEventListener("input", async (e) => {
+    this.searchField.addEventListener("input", (e) => {
       const value = e.target.value.trim();
       var newJobList = [];
-
       // If no search, return all
       if (value === "" || value == null || value == undefined) {
         return this.listJob(jobList);
       }
 
-      for await (const job of jobList) {
+      for (const job of jobList) {
         const isVisible = this.compareSearch(job.title, value);
         if (isVisible) {
           newJobList.push(job);
@@ -283,5 +285,23 @@ export default class JobView {
    */
   compareSearch(inputValue, jobTitle) {
     return inputValue.toLowerCase().includes(jobTitle.toLowerCase());
+  }
+
+  countStatusView(jobList) {
+    let jobCounts = {
+      active: 0,
+      completed: 0,
+      unfinished: 0,
+    };
+
+    jobList.forEach((job) => {
+      if (job.status === "active") jobCounts.active++;
+      else if (job.status === "completed") jobCounts.completed++;
+      else if (job.status === "unfinished") jobCounts.unfinished++;
+    });
+
+    this.activeCount.innerText = jobCounts.active.toString().padStart(2, '0')
+    this.completedCount.innerText = jobCounts.completed.toString().padStart(2, '0')
+    this.unfinishedCount.innerText = jobCounts.unfinished.toString().padStart(2, '0')
   }
 }

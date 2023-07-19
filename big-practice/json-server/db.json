@@ -4,11 +4,11 @@
       "id": 5,
       "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
       "title": "Google dev 3.0",
-      "date": "2023-07-18T02:05:13.081Z",
+      "date": "2023-07-19T07:40:50.579Z",
       "category": "marketing",
       "location": "Global",
       "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
-      "status": "completed"
+      "status": "active"
     },
     {
       "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
@@ -33,12 +33,12 @@
     {
       "id": 8,
       "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "Spotify 2.0 ultimate designer MLEM",
-      "date": "2023-07-17T09:41:43.451Z",
+      "title": "Spotify 3.5 MLEM",
+      "date": "2023-07-19T03:54:19.677Z",
       "category": "design",
       "location": "Japan",
       "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.",
-      "status": "unfinished"
+      "status": "completed"
     },
     {
       "logo": "https://www.freeiconspng.com/uploads/face-deadpool-icon-png-4.png",
@@ -61,14 +61,14 @@
       "status": "completed"
     },
     {
+      "id": 11,
       "logo": "https://icons.iconarchive.com/icons/github/octicons/256/copilot-96-icon.png",
-      "title": "alo",
-      "date": "2023-07-18T09:10:28.047Z",
-      "category": "marketing",
-      "location": "China",
-      "description": "vsvkjnksss",
-      "status": "active",
-      "id": 11
+      "title": "Copilot AI V.1.5",
+      "date": "2023-07-19T08:37:12.153Z",
+      "category": "developer",
+      "location": "USA",
+      "description": "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code. You can receive suggestions from GitHub Copilot either by starting to write the code you want to use, or by writing a natural language comment describing what you want the code to do.\n",
+      "status": "unfinished"
     }
   ]
 }

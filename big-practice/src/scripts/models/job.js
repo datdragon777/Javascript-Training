@@ -14,6 +14,7 @@ export default class JobModel {
   async getJobsModel() {
     const response = await getJobsService();
     this.jobs = response;
+    console.log("list model: ",this.jobs);
     return response;
   }
 
