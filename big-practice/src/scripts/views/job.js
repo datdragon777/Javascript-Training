@@ -46,7 +46,6 @@ export default class JobView {
       fragment.appendChild(jobItem);
     });
     this.jobUl.appendChild(fragment);
-    console.log("list view: ", jobData);
   }
 
   // Open create form popup
@@ -124,8 +123,6 @@ export default class JobView {
       const jobLink = e.target.closest("#card__link");
       const jobItem = e.target.closest(".job__item");
 
-      // console.log(jobItem.getAttribute("data-id"));
-
       if (jobLink) {
         clearValidationStyles();
         const jobId = jobItem.getAttribute("data-id");
@@ -143,7 +140,7 @@ export default class JobView {
           response.description;
 
         const statusList = this.form.querySelectorAll('input[name="status"]');
-        for await (const statusItem of statusList) {
+        for (const statusItem of statusList) {
           if (statusItem.value === response.status) {
             statusItem.checked = true;
           } else {
@@ -268,7 +265,7 @@ export default class JobView {
         return this.listJob(jobList);
       }
 
-      for await (const job of jobList) {
+      for (const job of jobList) {
         if (filterValue === job.status) {
           newListFilter.push(job);
         }
@@ -287,6 +284,10 @@ export default class JobView {
     return inputValue.toLowerCase().includes(jobTitle.toLowerCase());
   }
 
+  /**
+   * Count each status and show beside status button
+   * @param {Object} jobList
+   */
   countStatusView(jobList) {
     let jobCounts = {
       active: 0,

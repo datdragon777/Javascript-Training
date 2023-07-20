@@ -5,7 +5,7 @@ const formElements = [
     element: document.getElementById("input__logo"),
     paramName: "Logo",
     rule: {
-      isRequired: true
+      isRequired: true,
     },
   },
   {
@@ -41,6 +41,11 @@ const formElements = [
   },
 ];
 
+/**
+ * Set error when users submits wrong
+ * @param {DOM} element - Call document object model
+ * @param {string} message - Message invalid input
+ */
 const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".form__error");
@@ -50,6 +55,10 @@ const setError = (element, message) => {
   inputControl.classList.remove("form__success");
 };
 
+/**
+ * Set success when user submits right
+ * @param {DOM} element - Call document object model
+ */
 const setSuccess = (element) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".form__error");
@@ -91,7 +100,9 @@ export const validationForm = () => {
   return isValid;
 };
 
-// Clear all CSS validation
+/**
+ * Clear all CSS validation
+ */
 export const clearValidationStyles = () => {
   formElements.forEach(({ element }) => {
     const inputControl = element.parentElement;

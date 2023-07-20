@@ -24,11 +24,11 @@
       "id": 7,
       "logo": "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png",
       "title": "Linkedin",
-      "date": "2023-07-17T09:42:11.510Z",
+      "date": "2023-07-20T07:14:09.286Z",
       "category": "marketing",
       "location": "New Jersey",
       "description": "Writing a LinkedIn summary is incredibly difficult — especially without examples to look at. Should you recount your prior roles? List your accomplishments? Should it be written in first person? Or in third?",
-      "status": "unfinished"
+      "status": "active"
     },
     {
       "id": 8,
@@ -41,14 +41,14 @@
       "status": "completed"
     },
     {
+      "id": 9,
       "logo": "https://www.freeiconspng.com/uploads/face-deadpool-icon-png-4.png",
       "title": "Force X 5000",
-      "date": "2023-07-14T01:45:09.417Z",
+      "date": "2023-07-20T07:18:00.129Z",
       "category": "developer",
       "location": "Danang",
       "description": "Deadpool is the alter ego of Wade Wilson, a disfigured Canadian mercenary with superhuman regenerative healing abilities. He is known for his tendency to joke incessantly and break the fourth wall for humorous effect.",
-      "status": "active",
-      "id": 9
+      "status": "completed"
     },
     {
       "id": 10,
@@ -68,6 +68,16 @@
       "category": "developer",
       "location": "USA",
       "description": "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code. You can receive suggestions from GitHub Copilot either by starting to write the code you want to use, or by writing a natural language comment describing what you want the code to do.\n",
+      "status": "unfinished"
+    },
+    {
+      "id": 12,
+      "logo": "https://media.istockphoto.com/id/1202947205/vi/vec-to/d%E1%BA%A5u-hi%E1%BB%87u-v%C3%B2ng-tr%C3%B2n-m%C3%A0u-v%C3%A0ng-c%E1%BA%A3nh-b%C3%A1o-ph%C3%B3ng-x%E1%BA%A1-k%C3%BD-hi%E1%BB%87u-vector-c%E1%BA%A3nh-b%C3%A1o-ph%C3%B3ng-x%E1%BA%A1.jpg?s=2048x2048&w=is&k=20&c=DQGpZfrBQVuxGV9dSkaU6YsS-5d-SgXupJ8AF4YmD7k=",
+      "title": "Nuclear weapon engineer ",
+      "date": "2023-07-20T04:43:08.249Z",
+      "category": "developer",
+      "location": "Global",
+      "description": "A nuclear weapon is a device that uses a nuclear reaction to create an explosion. This explosion is much more powerful than that of conventional explosives (like TNT). When a nuclear weapon explodes, it gives off four types of energy: a blast wave, intense light, heat, and radiation.",
       "status": "unfinished"
     }
   ]
