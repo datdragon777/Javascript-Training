@@ -26,9 +26,9 @@ export default class JobView {
     this.jobUl = qs("#job__list");
     this.statusFormGroup = qs("#form__group--update");
     this.searchField = qs("#search__field");
-    this.activeCount = qs("#active__count")
-    this.completedCount = qs("#completed__count")
-    this.unfinishedCount = qs("#unfinished__count")
+    this.activeCount = qs("#active__count");
+    this.completedCount = qs("#completed__count");
+    this.unfinishedCount = qs("#unfinished__count");
   }
 
   /**
@@ -188,13 +188,7 @@ export default class JobView {
         jobUpdateValue.id,
         jobUpdateValue
       );
-      // Update failure
-      if (updateJob == null) {
-        // TODO: show message failure
-      } else {
-        // Load list
-        this.listJob(updateJob);
-      }
+      this.listJob(updateJob);
     });
   }
 
@@ -216,11 +210,7 @@ export default class JobView {
     this.btnConfirmDelete.addEventListener("click", async () => {
       const jobId = qs("#input__id").value;
       const deleteJob = await handleDeleteJob(jobId);
-      if (deleteJob == null) {
-        // TODO: show message failure
-      } else {
-        this.listJob(deleteJob);
-      }
+      this.listJob(deleteJob);
     });
   }
 
@@ -301,8 +291,12 @@ export default class JobView {
       else if (job.status === "unfinished") jobCounts.unfinished++;
     });
 
-    this.activeCount.innerText = jobCounts.active.toString().padStart(2, '0')
-    this.completedCount.innerText = jobCounts.completed.toString().padStart(2, '0')
-    this.unfinishedCount.innerText = jobCounts.unfinished.toString().padStart(2, '0')
+    this.activeCount.innerText = jobCounts.active.toString().padStart(2, "0");
+    this.completedCount.innerText = jobCounts.completed
+      .toString()
+      .padStart(2, "0");
+    this.unfinishedCount.innerText = jobCounts.unfinished
+      .toString()
+      .padStart(2, "0");
   }
 }
