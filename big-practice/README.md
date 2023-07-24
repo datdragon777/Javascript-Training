@@ -40,6 +40,8 @@ big-practice
         |-- images
             |-- ...
     |-- scripts
+        |-- constants
+            |-- ...
         |-- controllers
             |-- ...
         |-- helpers
@@ -47,6 +49,8 @@ big-practice
         |-- models
             |-- ...
         |-- services
+            |-- ...
+        |-- templates
             |-- ...
         |-- view
             |-- ...
@@ -73,7 +77,7 @@ big-practice
             |-- all.css
             |-- form-content.css
             |-- list-content.css
-            |--main-content.css
+            |-- main-content.css
         |-- index.css
     |-- index.html
 |-- .editorconfig
