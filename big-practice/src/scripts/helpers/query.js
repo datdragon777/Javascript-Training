@@ -1,1 +1,1 @@
-export const qs = (name) => document.querySelector(name);
+export const getId = (name) => document.getElementById(name);

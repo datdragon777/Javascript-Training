@@ -1,4 +1,4 @@
-import { proc } from "./base";
+import { checking } from "./base";
 export default class JobContoller {
   constructor(jobView, jobModel) {
     this.jobView = jobView;
@@ -9,10 +9,10 @@ export default class JobContoller {
 
   init() {
     // Form Popup
-    this.jobView.openCreateFormPopup();
+    this.jobView.openAddFormPopup();
     this.jobView.closeFormPopup();
     this.jobView.openUpdateFormPopup(this.handleGetJobById.bind(this));
-    this.jobView.openDeletePopup();
+    this.jobView.openDeleteFormPopup();
 
     // CRUD
     this.handleListJob();
@@ -46,9 +46,9 @@ export default class JobContoller {
    * @returns {object}
    */
   async handleAddJob(data) {
-    let $res = await proc(this.jobModel.addJobModel(data));
+    let response = await checking(this.jobModel.addJobModel(data));
     this.handleListJob();
-    return $res;
+    return response;
   }
 
   /**
@@ -57,7 +57,7 @@ export default class JobContoller {
    * @returns {object}
    */
   async handleGetJobById(id) {
-    return await proc(this.jobModel.getJobByIdModel(id));
+    return await checking(this.jobModel.getJobByIdModel(id));
   }
 
   /**
@@ -67,9 +67,9 @@ export default class JobContoller {
    * @returns {object}
    */
   async handleUpdateJob(id, data) {
-    let $res = await proc(this.jobModel.updateJobModel(id, data));
+    let response = await checking(this.jobModel.updateJobModel(id, data));
     this.handleListJob();
-    return $res;
+    return response;
   }
 
   /**
@@ -78,8 +78,8 @@ export default class JobContoller {
    * @returns {object}
    */
   async handleDeleteJob(id) {
-    let $res = await proc(this.jobModel.deleteJobModel(id));
+    let response = await checking(this.jobModel.deleteJobModel(id));
     this.handleListJob();
-    return $res;
+    return response;
   }
 }

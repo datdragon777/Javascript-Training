@@ -1,4 +1,4 @@
-export async function proc(handle) {
+export async function checking(handle) {
   try {
     return await handle;
   } catch (error) {

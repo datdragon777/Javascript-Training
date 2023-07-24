@@ -1,5 +1,8 @@
 # JAVASCRIPT BIG PRACTICE #
 
+## Description: ##
+- Website to manage jobs that need to be recruited with basic features
+
 ## Targets: ##
 - Apply knowledge of HTML5/CSS3/JavaScript (with ES6 syntax).
 - Understand and apply MVC pattern
@@ -12,13 +15,7 @@
 [Figma](https://www.figma.com/file/956iRedkZ2dyc8zaC5UyzJ/Free-HR-Management-Dashboard-UI-Kit-(Community)?node-id=0%3A1&mode=dev)
 
 ## Requirments: ##
-- Features:
-  - CRUD (Create/READ/UPDATE/DELETE)
-  - Search and filter
-- Apply:
-  - Json-server
-  - Font awsome
-  - Moment.js library (format Date)
+[Link] (https://docs.google.com/document/d/1LQBzvdZADZi4jeqBcISl957o7EWoNlI1t7eGpapZQMc/edit?usp=sharing)
 
 ## Deploy: ##
 [Here]()

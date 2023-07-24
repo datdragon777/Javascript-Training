@@ -1,13 +1,14 @@
-import { isSuccess } from "./base";
+import { isSuccess } from "../helpers/base";
+import { baseUrl } from "../constants/baseUrl"
 
-const baseUrl = "http://localhost:3000/jobs";
+const path = "jobs"
 
 /**
  * Get job data from json-server
  * @returns {object}
  */
 export const getJobsService = async () => {
-  const response = await fetch(baseUrl);
+  const response = await fetch(`${baseUrl}/${path}`);
   const jobs = await response.json();
   return jobs;
 };
@@ -18,18 +19,18 @@ export const getJobsService = async () => {
  * @returns {object}
  */
 export const getJobByIdService = async (id) => {
-  const response = await fetch(`${baseUrl}/${id}`);
+  const response = await fetch(`${baseUrl}/${path}/${id}`);
   const job = await response.json();
   return job;
 };
 
 /**
- * Create job and add to json-server
+ * Add job and add to json-server
  * @param {object} jobData
  * @returns {function || null}
  */
 export const addJobService = async (jobData) => {
-  const response = await fetch(baseUrl, {
+  const response = await fetch(`${baseUrl}/${path}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +50,7 @@ export const addJobService = async (jobData) => {
  * @returns {function || null}
  */
 export const updateJobService = async (id, jobData) => {
-  const response = await fetch(`${baseUrl}/${id}`, {
+  const response = await fetch(`${baseUrl}/${path}/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +70,7 @@ export const updateJobService = async (id, jobData) => {
  * @returns {function || null}
  */
 export const deleteJobService = async (id) => {
-  const response = await fetch(`${baseUrl}/${id}`, {
+  const response = await fetch(`${baseUrl}/${path}/${id}`, {
     method: "DELETE",
   });
   if (isSuccess(response)) {

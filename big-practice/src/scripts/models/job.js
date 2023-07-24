@@ -22,7 +22,7 @@ export default class JobModel {
   }
 
   /**
-   * Create job
+   * Add job
    * @param {object} jobData
    * @returns {object}
    */

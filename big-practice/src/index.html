@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
     <!-- Start Sidebar -->
@@ -45,10 +45,10 @@
             <input
               type="text"
               class="search__field"
-              id="search__field"
+              id="search-field"
               placeholder="search by title"
             />
-            <button class="search__btn" id="search__btn">
+            <button class="search__btn" id="search-btn">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
@@ -76,20 +76,20 @@
         <!-- Start List Content -->
         <div class="list__content" id="list__content">
           <h1 class="heading__title">Jobs</h1>
-          <div class="btn__box" id="btn__box">
-            <button class="btn btn__item btn__filter" id="btn__filter" data-filter="active">
-              Active Jobs<span class="item__quantity" id="active__count"></span>
+          <div class="btn__box" id="btn-box">
+            <button class="btn btn__item btn__filter" data-filter="active">
+              Active Jobs<span class="item__quantity" id="active-count"></span>
             </button>
-            <button class="btn btn__item btn__filter" id="btn__filter" data-filter="completed">
-              Completed<span class="item__quantity" id="completed__count"></span>
+            <button class="btn btn__item btn__filter" data-filter="completed">
+              Completed<span class="item__quantity" id="completed-count"></span>
             </button>
-            <button class="btn btn__item btn__filter" id="btn__filter" data-filter="unfinished">
-              Unfinished<span class="item__quantity" id="unfinished__count"></span>
+            <button class="btn btn__item btn__filter" data-filter="unfinished">
+              Unfinished<span class="item__quantity" id="unfinished-count"></span>
             </button>
           </div>
           <div class="content__cover">
-            <ul class="job__list" id="job__list">
-              <li class="btn create-job__btn" id="create-job__btn">
+            <ul class="job__list" id="job-list">
+              <li class="btn create-job__btn" id="create-job-btn">
                 <i class="fa-solid fa-plus"></i>
                 <p class="create-job__text">Create new job</p>
               </li>
@@ -101,17 +101,17 @@
       <!-- End Main Content -->
 
       <!-- Start Form  -->
-      <div class="form__bg" id="form__bg">
-        <div class="form__content" id="form__content">
-          <h2 class="heading__title heading__title--create" id="heading__title--create" >
+      <div class="form__bg" id="form-bg">
+        <div class="form__content" id="form-content">
+          <h2 class="heading__title heading__title--create" id="heading-title-create" >
             Create new job
           </h2>
-          <h2 class="heading__title heading__title--update" id="heading__title--update">
+          <h2 class="heading__title heading__title--update" id="heading-title-update">
             Update job
           </h2>
           <form class="form" id="form">
             <!-- id -->
-            <input type="hidden" id="input__id" name="id">
+            <input type="hidden" id="input-id" name="id">
             <!-- Logo -->
             <div class="form__group">
               <label class="form__name">Logo</label>
@@ -119,7 +119,7 @@
                 <input
                   type="text"
                   class="input__place"
-                  id="input__logo"
+                  id="input-logo"
                   placeholder="Enter link logo"
                   name="logo-path"
                 />
@@ -133,7 +133,7 @@
                 <input
                   type="text"
                   class="input__place"
-                  id="input__title"
+                  id="input-title"
                   placeholder="Enter title of job"
                   name="title"
                   maxlength="100"
@@ -148,7 +148,7 @@
                 <input
                   type="text"
                   class="input__place"
-                  id="input__location"
+                  id="input-location"
                   placeholder="Enter location of job"
                   name="location"
                 />
@@ -159,7 +159,7 @@
             <div class="form__group">
               <label class="form__name">Category</label>
               <div class="input__group">
-                <select class="select__menu" id="select__menu" name="category">
+                <select class="select__menu" id="select-menu" name="category">
                   <option class="select__value" id="select__value" value="">
                     Select your job
                   </option>
@@ -194,7 +194,7 @@
               <div class="input__group">
                 <textarea
                   class="form__description"
-                  id="input__description"
+                  id="input-description"
                   placeholder="Enter job description"
                   name="description"
                 ></textarea>
@@ -204,7 +204,7 @@
             <!-- Status -->
             <div
               class="form__group form__group--update"
-              id="form__group--update"
+              id="form-group-update"
             >
               <label class="form__name">Status</label>
               <div class="input__group">
@@ -239,13 +239,13 @@
             </div>
             <!-- Submit and Delete Button -->
             <div class="form__btn">
-              <button type="submit" class="btn btn__create" id="btn__create">
+              <button type="submit" class="btn btn__create" id="btn-create">
                 Create
               </button>
-              <button class="btn btn__delete" id="btn__delete">
+              <button class="btn btn__delete" id="btn-delete">
                 Delete
               </button>
-              <button type="submit" class="btn btn__update" id="btn__update">
+              <button type="submit" class="btn btn__update" id="btn-update">
                 Update
               </button>
             </div>
@@ -255,12 +255,12 @@
       <!-- End Form -->
 
       <!-- Start Delete Popup -->
-      <div class="form-delete__bg" id="form-delete__bg">
+      <div class="form-delete__bg" id="form-delete-bg">
         <div class="form__delete" id="form__content">
           <p class="text__confirm">Do you want to delete this job?</p>
           <div class="btn-container">
             <button class="btn btn__cancel">Cancel</button>
-            <button class="btn btn__delete is-show" id="btn__confirm__delete">Delete</button>
+            <button class="btn btn__delete is-show" id="btn-confirm-delete">Delete</button>
           </div>
         </div>
       </div>

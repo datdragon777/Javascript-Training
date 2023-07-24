@@ -22,7 +22,7 @@ export default class Template {
         <div class="card__description">${job.description}</div>
       </div>
       <div class="card__footer">
-        <a class="card__link" id="card__link" data-id="${job.id}">See more</a>
+        <a class="card__link" id="card-link" data-id="${job.id}">See more</a>
       </div>
     `;
 

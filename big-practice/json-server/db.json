@@ -1,84 +1,34 @@
 {
   "jobs": [
     {
-      "id": 5,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
-      "title": "Google dev 3.0",
-      "date": "2023-07-19T07:40:50.579Z",
-      "category": "marketing",
-      "location": "Global",
-      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.",
-      "status": "active"
-    },
-    {
-      "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
-      "title": "Slack black 3.0",
-      "date": "2023-07-16T08:55:19.983Z",
-      "category": "developer",
-      "location": "U.S",
-      "description": "Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate.\n",
-      "status": "completed",
-      "id": 6
-    },
-    {
-      "id": 7,
-      "logo": "https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png",
-      "title": "Linkedin",
-      "date": "2023-07-20T07:14:09.286Z",
-      "category": "marketing",
-      "location": "New Jersey",
-      "description": "Writing a LinkedIn summary is incredibly difficult — especially without examples to look at. Should you recount your prior roles? List your accomplishments? Should it be written in first person? Or in third?",
-      "status": "active"
-    },
-    {
-      "id": 8,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "Spotify 3.5 MLEM",
-      "date": "2023-07-19T03:54:19.677Z",
-      "category": "design",
-      "location": "Japan",
-      "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.",
-      "status": "completed"
-    },
-    {
-      "id": 9,
-      "logo": "https://www.freeiconspng.com/uploads/face-deadpool-icon-png-4.png",
-      "title": "Force X 5000",
-      "date": "2023-07-20T07:18:00.129Z",
-      "category": "developer",
-      "location": "Danang",
-      "description": "Deadpool is the alter ego of Wade Wilson, a disfigured Canadian mercenary with superhuman regenerative healing abilities. He is known for his tendency to joke incessantly and break the fourth wall for humorous effect.",
-      "status": "completed"
-    },
-    {
-      "id": 10,
-      "logo": "https://inkythuatso.com/uploads/thumbnails/800/2021/11/logo-starbucks-inkythuatso-2-01-17-13-47-33.jpg",
-      "title": "Starbucks",
-      "date": "2023-07-17T10:11:43.545Z",
-      "category": "marketing",
-      "location": "Global",
-      "description": "Starbucks Corp (Starbucks) is a specialty coffee retailer. It roasts, markets, and retails specialty coffee. The company, through its stores, offers several blends of coffee, handcrafted beverages, merchandise, and food items.",
-      "status": "completed"
-    },
-    {
-      "id": 11,
+      "id": 1,
       "logo": "https://icons.iconarchive.com/icons/github/octicons/256/copilot-96-icon.png",
-      "title": "Copilot AI V.1.5",
-      "date": "2023-07-19T08:37:12.153Z",
+      "title": "AI 2.0",
+      "date": "2023-07-21T07:01:07.038Z",
       "category": "developer",
-      "location": "USA",
-      "description": "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code. You can receive suggestions from GitHub Copilot either by starting to write the code you want to use, or by writing a natural language comment describing what you want the code to do.\n",
-      "status": "unfinished"
+      "location": "India",
+      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.\n",
+      "status": "completed"
     },
     {
-      "id": 12,
-      "logo": "https://media.istockphoto.com/id/1202947205/vi/vec-to/d%E1%BA%A5u-hi%E1%BB%87u-v%C3%B2ng-tr%C3%B2n-m%C3%A0u-v%C3%A0ng-c%E1%BA%A3nh-b%C3%A1o-ph%C3%B3ng-x%E1%BA%A1-k%C3%BD-hi%E1%BB%87u-vector-c%E1%BA%A3nh-b%C3%A1o-ph%C3%B3ng-x%E1%BA%A1.jpg?s=2048x2048&w=is&k=20&c=DQGpZfrBQVuxGV9dSkaU6YsS-5d-SgXupJ8AF4YmD7k=",
-      "title": "Nuclear weapon engineer ",
-      "date": "2023-07-20T04:43:08.249Z",
-      "category": "developer",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
+      "title": "Google",
+      "date": "2023-07-21T07:01:33.753Z",
+      "category": "design",
       "location": "Global",
-      "description": "A nuclear weapon is a device that uses a nuclear reaction to create an explosion. This explosion is much more powerful than that of conventional explosives (like TNT). When a nuclear weapon explodes, it gives off four types of energy: a blast wave, intense light, heat, and radiation.",
-      "status": "unfinished"
+      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.13 thg 5, 2020\n",
+      "status": "active",
+      "id": 2
+    },
+    {
+      "id": 4,
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+      "title": "alo 123 nawm sau muoi 11 mlem hehhe",
+      "date": "2023-07-21T09:19:04.155Z",
+      "category": "marketing",
+      "location": "fsafd",
+      "description": "savvsvasvsavas",
+      "status": "active"
     }
   ]
 }

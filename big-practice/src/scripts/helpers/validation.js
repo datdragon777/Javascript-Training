@@ -1,15 +1,15 @@
-import MessageString from "../constants/messegeString";
+import showMessageString from "../helpers/messegeString";
 
 const formElements = [
   {
-    element: document.getElementById("input__logo"),
+    element: document.getElementById("input-logo"),
     paramName: "Logo",
     rule: {
       isRequired: true,
     },
   },
   {
-    element: document.getElementById("input__title"),
+    element: document.getElementById("input-title"),
     paramName: "Title",
     rule: {
       isRequired: true,
@@ -17,14 +17,14 @@ const formElements = [
     },
   },
   {
-    element: document.getElementById("input__location"),
+    element: document.getElementById("input-location"),
     paramName: "Location",
     rule: {
       isRequired: true,
     },
   },
   {
-    element: document.getElementById("select__menu"),
+    element: document.getElementById("select-menu"),
     paramName: "Category",
     rule: {
       isRequired: true,
@@ -32,7 +32,7 @@ const formElements = [
     },
   },
   {
-    element: document.getElementById("input__description"),
+    element: document.getElementById("input-description"),
     paramName: "Description",
     rule: {
       isRequired: true,
@@ -74,7 +74,7 @@ const setSuccess = (element) => {
  * @returns if empty, return True.
  */
 export const isEmpty = (str) => {
-  if (str === "" || str === null || str === undefined || str === [])
+  if (!str)
     return true;
   return false;
 };
@@ -90,7 +90,7 @@ export const validationForm = () => {
 
     // check empty
     if (!!rule.isRequired && isEmpty(value)) {
-      setError(element, MessageString.MSGE00001(paramName));
+      setError(element, showMessageString.MSGE00001(paramName));
       isValid = false;
     } else {
       setSuccess(element);

@@ -1,4 +1,4 @@
-import { qs } from "../helpers/query";
+import { getId } from "../helpers/query";
 import { validationForm, clearValidationStyles } from "../helpers/validation";
 
 export default class JobView {
@@ -6,29 +6,29 @@ export default class JobView {
     this.template = template;
 
     // Form
-    this.formBg = qs("#form__bg");
-    this.formContent = qs("#form__content");
-    this.form = qs("#form");
-    this.formConfirmDelete = qs("#form-delete__bg");
-    this.titleCreateForm = qs("#heading__title--create");
-    this.titleUpdateForm = qs("#heading__title--update");
+    this.formBg = getId("form-bg");
+    this.formContent = getId("form-content");
+    this.form = getId("form");
+    this.formConfirmDelete = getId("form-delete-bg");
+    this.titleCreateForm = getId("heading-title-create");
+    this.titleUpdateForm = getId("heading-title-update");
 
     // Button
-    this.btnCreateJob = qs("#create-job__btn");
-    this.btnCreateForm = qs("#btn__create");
-    this.btnUpdateForm = qs("#btn__update");
-    this.btnDeleteForm = qs("#btn__delete");
-    this.btnConfirmDelete = qs("#btn__confirm__delete");
-    this.btnSearch = qs("#search__btn");
-    this.btnFilter = qs("#btn__box");
+    this.btnCreateJob = getId("create-job-btn");
+    this.btnCreateForm = getId("btn-create");
+    this.btnUpdateForm = getId("btn-update");
+    this.btnDeleteForm = getId("btn-delete");
+    this.btnConfirmDelete = getId("btn-confirm-delete");
+    this.btnSearch = getId("search-btn");
+    this.btnFilter = getId("btn-box");
 
     // Another
-    this.jobUl = qs("#job__list");
-    this.statusFormGroup = qs("#form__group--update");
-    this.searchField = qs("#search__field");
-    this.activeCount = qs("#active__count");
-    this.completedCount = qs("#completed__count");
-    this.unfinishedCount = qs("#unfinished__count");
+    this.jobUl = getId("job-list");
+    this.statusFormGroup = getId("form-group-update");
+    this.searchField = getId("search-field");
+    this.activeCount = getId("active-count");
+    this.completedCount = getId("completed-count");
+    this.unfinishedCount = getId("unfinished-count");
   }
 
   /**
@@ -37,8 +37,8 @@ export default class JobView {
    */
   listJob(jobData) {
     const fragment = document.createDocumentFragment();
-
-    const listItem = document.querySelectorAll("#job__list .job__item");
+    const listItem = document.querySelectorAll(".job__item");
+    
     listItem.forEach((item) => item.remove());
 
     jobData.forEach((job) => {
@@ -48,8 +48,8 @@ export default class JobView {
     this.jobUl.appendChild(fragment);
   }
 
-  // Open create form popup
-  openCreateFormPopup() {
+  // Open add form popup
+  openAddFormPopup() {
     this.btnCreateJob.addEventListener("click", () => {
       this.form.reset();
       clearValidationStyles();
@@ -91,12 +91,12 @@ export default class JobView {
       }
 
       const jobValue = {
-        logo: qs("#input__logo").value,
-        title: qs("#input__title").value,
+        logo: getId("input-logo").value,
+        title: getId("input-title").value,
         date: new Date(),
-        category: qs("#select__menu").value,
-        location: qs("#input__location").value,
-        description: qs("#input__description").value,
+        category: getId("select-menu").value,
+        location: getId("input-location").value,
+        description: getId("input-description").value,
         status: "active",
       };
       this.formBg.classList.remove("is-visible");
@@ -120,7 +120,7 @@ export default class JobView {
    */
   openUpdateFormPopup(handleGetJobById) {
     this.jobUl.addEventListener("click", async (e) => {
-      const jobLink = e.target.closest("#card__link");
+      const jobLink = e.target.closest("#card-link");
       const jobItem = e.target.closest(".job__item");
 
       if (jobLink) {
@@ -173,13 +173,13 @@ export default class JobView {
       }
 
       const jobUpdateValue = {
-        id: qs("#input__id").value,
-        logo: qs("#input__logo").value,
-        title: qs("#input__title").value,
+        id: getId("input-id").value,
+        logo: getId("input-logo").value,
+        title: getId("input-title").value,
         date: new Date(),
-        category: qs("#select__menu").value,
-        location: qs("#input__location").value,
-        description: qs("#input__description").value,
+        category: getId("select-menu").value,
+        location: getId("input-location").value,
+        description: getId("input-description").value,
         status: this.form.querySelector('input[name="status"]:checked').value,
       };
 
@@ -193,7 +193,7 @@ export default class JobView {
   }
 
   // Open delete popup
-  openDeletePopup() {
+  openDeleteFormPopup() {
     this.btnDeleteForm.addEventListener("click", (e) => {
       e.preventDefault();
       this.formBg.classList.remove("is-visible");
@@ -208,7 +208,7 @@ export default class JobView {
    */
   deleteJobView(handleDeleteJob) {
     this.btnConfirmDelete.addEventListener("click", async () => {
-      const jobId = qs("#input__id").value;
+      const jobId = getId("input-id").value;
       const deleteJob = await handleDeleteJob(jobId);
       this.listJob(deleteJob);
     });
@@ -223,7 +223,7 @@ export default class JobView {
       const value = e.target.value.trim();
       var newJobList = [];
       // If no search, return all
-      if (value === "" || value == null || value == undefined) {
+      if (!value) {
         return this.listJob(jobList);
       }
 
@@ -247,11 +247,7 @@ export default class JobView {
       const filterValue = e.target.dataset.filter;
       var newListFilter = [];
 
-      if (
-        filterValue === "" ||
-        filterValue == null ||
-        filterValue == undefined
-      ) {
+      if (!filterValue) {
         return this.listJob(jobList);
       }
 
