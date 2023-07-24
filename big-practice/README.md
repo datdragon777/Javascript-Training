@@ -15,7 +15,7 @@
 [Figma](https://www.figma.com/file/956iRedkZ2dyc8zaC5UyzJ/Free-HR-Management-Dashboard-UI-Kit-(Community)?node-id=0%3A1&mode=dev)
 
 ## Requirments: ##
-[Link] (https://docs.google.com/document/d/1LQBzvdZADZi4jeqBcISl957o7EWoNlI1t7eGpapZQMc/edit?usp=sharing)
+[Link](https://docs.google.com/document/d/1LQBzvdZADZi4jeqBcISl957o7EWoNlI1t7eGpapZQMc/edit?usp=sharing)
 
 ## Deploy: ##
 [Here]()
