@@ -1,4 +1,4 @@
-import { isSuccess } from "../helpers/base";
+import { isSuccess } from "../helpers/check-service";
 import { baseUrl } from "../constants/baseUrl"
 
 const path = "jobs"
@@ -25,7 +25,7 @@ export const getJobByIdService = async (id) => {
 };
 
 /**
- * Add job and add to json-server
+ * Add job and add into json-server
  * @param {object} jobData
  * @returns {function || null}
  */
@@ -38,7 +38,7 @@ export const addJobService = async (jobData) => {
     body: JSON.stringify(jobData),
   });
   if (isSuccess(response)) {
-    return await getJobsService();
+    return response;
   }
   return null;
 };
@@ -57,9 +57,9 @@ export const updateJobService = async (id, jobData) => {
     },
     body: JSON.stringify(jobData),
   });
-
+  console.log("job service:", jobData);
   if (isSuccess(response)) {
-    return await getJobsService();
+    return response;
   }
   return null;
 };
@@ -74,7 +74,7 @@ export const deleteJobService = async (id) => {
     method: "DELETE",
   });
   if (isSuccess(response)) {
-    return await getJobsService();
+    return response;
   }
   return null;
 };

@@ -1,4 +1,4 @@
-import { checking } from "./base";
+import { checking } from "../helpers/check-controller";
 export default class JobContoller {
   constructor(jobView, jobModel) {
     this.jobView = jobView;
@@ -47,7 +47,6 @@ export default class JobContoller {
    */
   async handleAddJob(data) {
     let response = await checking(this.jobModel.addJobModel(data));
-    this.handleListJob();
     return response;
   }
 
@@ -68,7 +67,7 @@ export default class JobContoller {
    */
   async handleUpdateJob(id, data) {
     let response = await checking(this.jobModel.updateJobModel(id, data));
-    this.handleListJob();
+    console.log("update data controller:", data);
     return response;
   }
 

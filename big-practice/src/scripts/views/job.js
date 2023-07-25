@@ -38,7 +38,7 @@ export default class JobView {
   listJob(jobData) {
     const fragment = document.createDocumentFragment();
     const listItem = document.querySelectorAll(".job__item");
-    
+
     listItem.forEach((item) => item.remove());
 
     jobData.forEach((job) => {
@@ -91,6 +91,7 @@ export default class JobView {
       }
 
       const jobValue = {
+        id: getId("input-id").value,
         logo: getId("input-logo").value,
         title: getId("input-title").value,
         date: new Date(),
@@ -99,9 +100,9 @@ export default class JobView {
         description: getId("input-description").value,
         status: "active",
       };
+      await handleAddJob(jobValue);
       this.formBg.classList.remove("is-visible");
-      const newJob = await handleAddJob(jobValue);
-      this.displayJobItem(newJob);
+      this.displayJobItem(jobValue);
     });
   }
 
@@ -184,11 +185,7 @@ export default class JobView {
       };
 
       this.formBg.classList.remove("is-visible");
-      const updateJob = await handleUpdateJob(
-        jobUpdateValue.id,
-        jobUpdateValue
-      );
-      this.listJob(updateJob);
+      await handleUpdateJob(jobUpdateValue.id, jobUpdateValue);
     });
   }
 

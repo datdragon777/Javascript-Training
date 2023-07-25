@@ -4,8 +4,8 @@
       "id": 1,
       "logo": "https://icons.iconarchive.com/icons/github/octicons/256/copilot-96-icon.png",
       "title": "AI 2.0",
-      "date": "2023-07-21T07:01:07.038Z",
-      "category": "developer",
+      "date": "2023-07-25T08:43:48.913Z",
+      "category": "design",
       "location": "India",
       "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.\n",
       "status": "completed"
@@ -21,13 +21,23 @@
       "id": 2
     },
     {
-      "id": 4,
+      "id": 3,
       "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "alo 123 nawm sau muoi 11 mlem hehhe",
-      "date": "2023-07-21T09:19:04.155Z",
+      "title": "Spotify marketing",
+      "date": "2023-07-25T03:04:43.200Z",
       "category": "marketing",
-      "location": "fsafd",
-      "description": "savvsvasvsavas",
+      "location": "Japan",
+      "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.\n",
+      "status": "unfinished"
+    },
+    {
+      "id": "4",
+      "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
+      "title": "vsvas",
+      "date": "2023-07-25T11:02:47.721Z",
+      "category": "design",
+      "location": "da nang",
+      "description": "svsavavasv",
       "status": "active"
     }
   ]

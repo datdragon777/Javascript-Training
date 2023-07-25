@@ -6,7 +6,7 @@ export default class Template {
     const li = document.createElement("li");
     li.classList.add("job__item");
     li.setAttribute("data-id", job.id);
-    li.setAttribute("id", "job__item");
+    li.setAttribute("id", "job-item");
 
     li.innerHTML = `
       <div class="card__header">

@@ -27,6 +27,8 @@ export default class JobModel {
    * @returns {object}
    */
   async addJobModel(jobData) {
+    this.jobs.push(jobData);
+    console.log("list job in model: ", this.jobs);
     return await addJobService(jobData);
   }
 
@@ -46,6 +48,12 @@ export default class JobModel {
    * @returns {object}
    */
   async updateJobModel(id, jobData) {
+    this.jobs.map(item => {
+      if (item.id === jobData.id) {
+        return jobData
+      }
+      return item
+    })
     return await updateJobService(id, jobData);
   }
 
