@@ -26,10 +26,9 @@ export default class JobModel {
    * @param {object} jobData
    * @returns {object}
    */
-  async addJobModel(jobData) {
+  addJobModel(jobData) {
     this.jobs.push(jobData);
-    console.log("list job in model: ", this.jobs);
-    return await addJobService(jobData);
+    return addJobService(jobData);
   }
 
   /**
@@ -37,8 +36,8 @@ export default class JobModel {
    * @param {string} id - ID of job
    * @returns {object}
    */
-  async getJobByIdModel(id) {
-    return await getJobByIdService(id);
+  getJobByIdModel(id) {
+    return getJobByIdService(id);
   }
 
   /**
@@ -47,14 +46,15 @@ export default class JobModel {
    * @param {object} jobData - job's data after updating
    * @returns {object}
    */
-  async updateJobModel(id, jobData) {
-    this.jobs.map(item => {
-      if (item.id === jobData.id) {
-        return jobData
+  updateJobModel(id, jobData) {
+    this.jobs = this.jobs.map((item) => {
+      if (item.id === id) {
+        return jobData;
       }
-      return item
-    })
-    return await updateJobService(id, jobData);
+      return item;
+    });
+
+    return updateJobService(id, jobData);
   }
 
   /**
@@ -62,7 +62,58 @@ export default class JobModel {
    * @param {string} id - ID of job
    * @returns {object}
    */
-  async deleteJobModel(id) {
-    return await deleteJobService(id);
+  deleteJobModel(id) {
+    this.jobs = this.jobs.filter((item) => item.id !== id);
+    return deleteJobService(id);
+  }
+
+  /**
+   * Search job based on title
+   * @param {string} value - value when user typing
+   * @returns {object}
+   */
+  searchJobModel(value) {
+    const data = this.jobs.filter((job) => {
+      if (job.title && typeof job.title === "string") {
+        return job.title.toLowerCase().includes(value.toLowerCase());
+      }
+      return false;
+    });
+
+    if (!value) {
+      return this.jobs; // Return the original list if the search value is empty
+    }
+
+    return data;
+  }
+
+  /**
+   * Filter job based on status
+   * @param {string} status
+   * @returns {object}
+   */
+  filterJobModel(status) {
+    const filteredJobs = this.jobs.filter((job) => job.status === status);
+    if (!status) {
+      return this.jobs; // Return the original list if no status is provided
+    }
+
+    return filteredJobs;
+  }
+
+  countStatusModel = () => {
+    let jobCounts = {
+      active: 0,
+      completed: 0,
+      unfinished: 0,
+    };
+
+    this.jobs.forEach((job) => {
+      if (job.status === "active") jobCounts.active++;
+      else if (job.status === "completed") jobCounts.completed++;
+      else if (job.status === "unfinished") jobCounts.unfinished++;
+    });
+
+    return jobCounts;
   }
 }

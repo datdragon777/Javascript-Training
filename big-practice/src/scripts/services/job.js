@@ -57,7 +57,6 @@ export const updateJobService = async (id, jobData) => {
     },
     body: JSON.stringify(jobData),
   });
-  console.log("job service:", jobData);
   if (isSuccess(response)) {
     return response;
   }
@@ -74,6 +73,7 @@ export const deleteJobService = async (id) => {
     method: "DELETE",
   });
   if (isSuccess(response)) {
+    console.log("delete in service:", id);
     return response;
   }
   return null;

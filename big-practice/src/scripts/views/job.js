@@ -1,6 +1,6 @@
-import { getId } from "../helpers/query";
+import { getId } from "../helpers/get-id";
 import { validationForm, clearValidationStyles } from "../helpers/validation";
-
+import { v4 as uuidv4 } from 'uuid';
 export default class JobView {
   constructor(template) {
     this.template = template;
@@ -91,7 +91,7 @@ export default class JobView {
       }
 
       const jobValue = {
-        id: getId("input-id").value,
+        id: uuidv4(),
         logo: getId("input-logo").value,
         title: getId("input-title").value,
         date: new Date(),
@@ -173,6 +173,7 @@ export default class JobView {
         return;
       }
 
+      // Get update value
       const jobUpdateValue = {
         id: getId("input-id").value,
         logo: getId("input-logo").value,
@@ -183,6 +184,25 @@ export default class JobView {
         description: getId("input-description").value,
         status: this.form.querySelector('input[name="status"]:checked').value,
       };
+
+      const jobItemElement = document.querySelector(
+        `[data-id="${jobUpdateValue.id}"]`
+      );
+      const jobDate = moment(jobUpdateValue.date).format("DD MMMM");
+
+      // Set new value to update job card
+      if (jobItemElement) {
+        jobItemElement.querySelector(".card__logo").src = jobUpdateValue.logo;
+        jobItemElement.querySelector(".card__title").textContent =
+          jobUpdateValue.title;
+        jobItemElement.querySelector(".card__date").textContent = jobDate;
+        jobItemElement.querySelector(".card__location").textContent =
+          jobUpdateValue.location;
+        jobItemElement.querySelector(".card__category").textContent =
+          jobUpdateValue.category;
+        jobItemElement.querySelector(".card__description").textContent =
+          jobUpdateValue.description;
+      }
 
       this.formBg.classList.remove("is-visible");
       await handleUpdateJob(jobUpdateValue.id, jobUpdateValue);
@@ -206,90 +226,46 @@ export default class JobView {
   deleteJobView(handleDeleteJob) {
     this.btnConfirmDelete.addEventListener("click", async () => {
       const jobId = getId("input-id").value;
-      const deleteJob = await handleDeleteJob(jobId);
-      this.listJob(deleteJob);
+      const jobItemElement = document.querySelector(`[data-id="${jobId}"]`);
+      if (jobItemElement) {
+        this.jobUl.removeChild(jobItemElement);
+      }
+      await handleDeleteJob(jobId);
     });
   }
 
   /**
-   * Search job by title
-   * @param {Array} jobList
+   * Search job based on title
+   * @param {function} handleSearchJob
    */
-  searchJobView(jobList) {
-    this.searchField.addEventListener("input", (e) => {
+  searchJobView(handleSearchJob) {
+    this.searchField.addEventListener("input", async (e) => {
       const value = e.target.value.trim();
-      var newJobList = [];
-      // If no search, return all
-      if (!value) {
-        return this.listJob(jobList);
-      }
-
-      for (const job of jobList) {
-        const isVisible = this.compareSearch(job.title, value);
-        if (isVisible) {
-          newJobList.push(job);
-        }
-      }
-
-      this.listJob(newJobList);
+      const searchResult = await handleSearchJob(value);
+      this.listJob(searchResult);
     });
   }
 
   /**
-   *The filterJobView function is used to filter and display the job list based on a status of job.
-   * @param {object} jobList - job list to filter
+   * Filter job based on status
+   * @param {function} handleFilterJob
    */
-  filterJobView(jobList) {
+  filterJobView(handleFilterJob) {
     this.btnFilter.addEventListener("click", async (e) => {
       const filterValue = e.target.dataset.filter;
-      var newListFilter = [];
-
-      if (!filterValue) {
-        return this.listJob(jobList);
-      }
-
-      for (const job of jobList) {
-        if (filterValue === job.status) {
-          newListFilter.push(job);
-        }
-      }
-      this.listJob(newListFilter);
-    });
-  }
-
-  /**
-   * Compare search input value and job title
-   * @param {string} inputValue
-   * @param {string} jobTitle
-   * @returns true/false
-   */
-  compareSearch(inputValue, jobTitle) {
-    return inputValue.toLowerCase().includes(jobTitle.toLowerCase());
+      const filterResult = await handleFilterJob(filterValue);
+      this.listJob(filterResult);
+    })
   }
 
   /**
    * Count each status and show beside status button
-   * @param {Object} jobList
+   * @param {Object} jobCounts
    */
-  countStatusView(jobList) {
-    let jobCounts = {
-      active: 0,
-      completed: 0,
-      unfinished: 0,
-    };
-
-    jobList.forEach((job) => {
-      if (job.status === "active") jobCounts.active++;
-      else if (job.status === "completed") jobCounts.completed++;
-      else if (job.status === "unfinished") jobCounts.unfinished++;
-    });
-
-    this.activeCount.innerText = jobCounts.active.toString().padStart(2, "0");
-    this.completedCount.innerText = jobCounts.completed
-      .toString()
-      .padStart(2, "0");
-    this.unfinishedCount.innerText = jobCounts.unfinished
-      .toString()
-      .padStart(2, "0");
+  updateStatusCounts(jobCounts) {
+    const { active = 0, completed = 0, unfinished = 0 } = jobCounts;
+    this.activeCount.innerText = String(active).padStart(2, "0");
+    this.completedCount.innerText = String(completed).padStart(2, "0");
+    this.unfinishedCount.innerText = String(unfinished).padStart(2, "0");
   }
 }

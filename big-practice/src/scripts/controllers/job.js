@@ -1,13 +1,11 @@
 import { checking } from "../helpers/check-controller";
-export default class JobContoller {
+export default class JobController {
   constructor(jobView, jobModel) {
     this.jobView = jobView;
     this.jobModel = jobModel;
-
-    this.init();
   }
 
-  init() {
+  async init() {
     // Form Popup
     this.jobView.openAddFormPopup();
     this.jobView.closeFormPopup();
@@ -15,10 +13,15 @@ export default class JobContoller {
     this.jobView.openDeleteFormPopup();
 
     // CRUD
-    this.handleListJob();
+    await this.handleListJob();
     this.jobView.addJobView(this.handleAddJob.bind(this));
     this.jobView.updateJobView(this.handleUpdateJob.bind(this));
     this.jobView.deleteJobView(this.handleDeleteJob.bind(this));
+
+    // Other features
+    this.jobView.searchJobView(this.handleSearchJob.bind(this));
+    this.jobView.filterJobView(this.handleFilterJob.bind(this));
+    this.handleCountStatus();
   }
 
   /**
@@ -26,18 +29,7 @@ export default class JobContoller {
    */
   async handleListJob() {
     const jobData = await this.jobModel.getJobsModel();
-
-    // Call list job
     this.jobView.listJob(jobData);
-
-    // Search feature
-    this.jobView.searchJobView(jobData);
-
-    // Filter feature
-    this.jobView.filterJobView(jobData);
-
-    // Count status feature
-    this.jobView.countStatusView(jobData);
   }
 
   /**
@@ -46,12 +38,11 @@ export default class JobContoller {
    * @returns {object}
    */
   async handleAddJob(data) {
-    let response = await checking(this.jobModel.addJobModel(data));
-    return response;
+    return await checking(this.jobModel.addJobModel(data));
   }
 
   /**
-   * Handle get job base on ID
+   * Handle get job based on ID
    * @param {string} id
    * @returns {object}
    */
@@ -60,25 +51,53 @@ export default class JobContoller {
   }
 
   /**
-   * Handle update job base on ID
+   * Handle update job based on ID
    * @param {string} id - ID of job
    * @param {object} data - job's information after updating
    * @returns {object}
    */
   async handleUpdateJob(id, data) {
-    let response = await checking(this.jobModel.updateJobModel(id, data));
-    console.log("update data controller:", data);
-    return response;
+    // return await checking(this.jobModel.updateJobModel(id, data));
+    const updatedJob = await checking(this.jobModel.updateJobModel(id, data));
+    if (updatedJob) {
+      // Recalculate the status counts after successful update
+      this.handleCountStatus();
+    }
+    return updatedJob;
   }
 
   /**
-   * Handle delete job base on ID
+   * Handle delete job based on ID
    * @param {string} id - ID of job
    * @returns {object}
    */
   async handleDeleteJob(id) {
-    let response = await checking(this.jobModel.deleteJobModel(id));
-    this.handleListJob();
-    return response;
+    return await checking(this.jobModel.deleteJobModel(id));
+  }
+
+  /**
+   * Handle search job based on title
+   * @param {string} data
+   * @returns {object}
+   */
+  async handleSearchJob(data) {
+    return await checking(this.jobModel.searchJobModel(data));
+  }
+
+  /**
+   * Handle filter job based on status
+   * @param {string} data
+   * @returns {object}
+   */
+  async handleFilterJob(data) {
+    return await checking(this.jobModel.filterJobModel(data));
+  }
+
+  async handleCountStatus() {
+    const jobCounts = await checking(this.jobModel.countStatusModel());
+    if (jobCounts) {
+      // Update the UI to display the new status counts
+      this.jobView.updateStatusCounts(jobCounts);
+    }
   }
 }

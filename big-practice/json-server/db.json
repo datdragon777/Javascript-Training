@@ -1,44 +1,54 @@
 {
   "jobs": [
     {
-      "id": 1,
-      "logo": "https://icons.iconarchive.com/icons/github/octicons/256/copilot-96-icon.png",
-      "title": "AI 2.0",
-      "date": "2023-07-25T08:43:48.913Z",
-      "category": "design",
-      "location": "India",
-      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.\n",
-      "status": "completed"
-    },
-    {
+      "id": "2ff690b1-a8be-45c7-84f0-b0b601ee07e2",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
       "title": "Google",
-      "date": "2023-07-21T07:01:33.753Z",
-      "category": "design",
+      "date": "2023-07-27T03:57:44.466Z",
+      "category": "developer",
       "location": "Global",
-      "description": "Google is an internet search engine. It uses a proprietary algorithm that's designed to retrieve and order search results to provide the most relevant and dependable sources of data possible.13 thg 5, 2020\n",
-      "status": "active",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
-      "title": "Spotify marketing",
-      "date": "2023-07-25T03:04:43.200Z",
-      "category": "marketing",
-      "location": "Japan",
-      "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.\n",
+      "description": "Google LLC (/ˈɡuːɡəl/ ( listen)) is an American multinational technology company focusing on artificial intelligence, online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.\n",
       "status": "unfinished"
     },
     {
-      "id": "4",
-      "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
-      "title": "vsvas",
-      "date": "2023-07-25T11:02:47.721Z",
+      "id": "d0f1bf07-9d29-48f8-bbdc-9ecbed2528c7",
+      "logo": "https://icons.iconarchive.com/icons/github/octicons/256/copilot-96-icon.png",
+      "title": "Copilot AI",
+      "date": "2023-07-27T04:03:38.373Z",
+      "category": "developer",
+      "location": "USA",
+      "description": "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code. You can receive suggestions from GitHub Copilot either by starting to write the code you want to use, or by writing a natural language comment describing what you want the code to do.\n",
+      "status": "completed"
+    },
+    {
+      "id": "3e375377-c2af-4236-af92-6b2d8dc64d8d",
+      "logo": "https://softwarelist.oregonstate.edu/sites/softwarelist.oregonstate.edu/files/styles/software_image/public/software/slack.gif?itok=UDySX6zN",
+      "title": "Designer 1000",
+      "date": "2023-07-26T07:34:12.377Z",
       "category": "design",
-      "location": "da nang",
-      "description": "svsavavasv",
+      "location": "Japan",
+      "description": "A designer plays a key role in a creative company. Using elements like typography, illustration, photography and layouts, a designer always has an extremely creative mind that can absorb visual trends and deploy them in fresh and exciting ways.\n",
       "status": "active"
+    },
+    {
+      "id": "f7f6aaa4-599c-4062-b49e-05b09bd82a83",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+      "title": "Spotify marketing",
+      "date": "2023-07-27T07:25:13.849Z",
+      "category": "marketing",
+      "location": "Global",
+      "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.\n",
+      "status": "completed"
+    },
+    {
+      "id": "22f78937-0b70-440d-91da-d27b10f87ec2",
+      "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
+      "title": "Black clover slack",
+      "date": "2023-07-27T04:08:45.046Z",
+      "category": "marketing",
+      "location": "danang",
+      "description": "Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate.\n",
+      "status": "completed"
     }
   ]
 }
