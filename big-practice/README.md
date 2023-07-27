@@ -21,7 +21,7 @@
 [Here]()
 
 ## Information: ##
-- Time line: 27/06/2023 -> ../../2023
+- Time line: 27/06/2023 -> 28/07/2023
 - Editor: Visual Studio Code
 - Supported browser: Chrome lasted
 
