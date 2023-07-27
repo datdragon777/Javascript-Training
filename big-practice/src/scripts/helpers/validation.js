@@ -1,4 +1,4 @@
-import showMessageString from "./messege";
+import {showMessageString} from "./messege";
 
 const formElements = [
   {
