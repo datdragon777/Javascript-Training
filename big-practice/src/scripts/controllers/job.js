@@ -1,4 +1,3 @@
-import { checking } from "../helpers/check-controller";
 export default class JobController {
   constructor(jobView, jobModel) {
     this.jobView = jobView;
@@ -28,8 +27,19 @@ export default class JobController {
    * Handle get list job
    */
   async handleListJob() {
-    const jobData = await this.jobModel.getJobsModel();
-    this.jobView.listJob(jobData);
+    const response = await this.jobModel.getJobsModel();
+    try {
+      if (response.ok) {
+        const jobData = await response.json();
+        this.jobModel.jobs = jobData
+        console.log("log jobs:", this.jobModel.jobs);
+        this.jobView.listJob(jobData);
+      } else {
+        this.jobView.openErrorFormPopup();
+      }
+    } catch (error) {
+      this.jobView.openErrorFormPopup();
+    }
   }
 
   /**
@@ -38,7 +48,16 @@ export default class JobController {
    * @returns {object}
    */
   async handleAddJob(data) {
-    return await checking(this.jobModel.addJobModel(data));
+    const response = await this.jobModel.addJobModel(data);
+    try {
+      if (response.ok) {
+        return response;
+      } else {
+        this.jobView.openErrorFormPopup();
+      }
+    } catch (error) {
+      this.jobView.openErrorFormPopup();
+    }
   }
 
   /**
@@ -47,7 +66,16 @@ export default class JobController {
    * @returns {object}
    */
   async handleGetJobById(id) {
-    return await checking(this.jobModel.getJobByIdModel(id));
+    const response = await this.jobModel.getJobByIdModel(id)
+    try {
+      if (response.ok) {
+        return response.json()
+      } else {
+        this.jobView.openErrorFormPopup();
+      }
+    } catch (error) {
+      this.jobView.openErrorFormPopup();
+    }
   }
 
   /**
@@ -57,13 +85,17 @@ export default class JobController {
    * @returns {object}
    */
   async handleUpdateJob(id, data) {
-    // return await checking(this.jobModel.updateJobModel(id, data));
-    const updatedJob = await checking(this.jobModel.updateJobModel(id, data));
-    if (updatedJob) {
-      // Recalculate the status counts after successful update
-      this.handleCountStatus();
+    const response = await this.jobModel.updateJobModel(id, data);
+    try {
+      if (response.ok) {
+        this.handleCountStatus();
+        return response
+      } else {
+        this.jobView.openErrorFormPopup();
+      }
+    } catch (error) {
+      this.jobView.openErrorFormPopup();
     }
-    return updatedJob;
   }
 
   /**
@@ -72,7 +104,16 @@ export default class JobController {
    * @returns {object}
    */
   async handleDeleteJob(id) {
-    return await checking(this.jobModel.deleteJobModel(id));
+    const response = await this.jobModel.deleteJobModel(id);
+    try {
+      if (response.ok) {
+        return response
+      } else {
+        this.jobView.openErrorFormPopup();
+      }
+    } catch (error) {
+      this.jobView.openErrorFormPopup();
+    }
   }
 
   /**
@@ -81,7 +122,7 @@ export default class JobController {
    * @returns {object}
    */
   async handleSearchJob(data) {
-    return await checking(this.jobModel.searchJobModel(data));
+    return await this.jobModel.searchJobModel(data);
   }
 
   /**
@@ -90,11 +131,11 @@ export default class JobController {
    * @returns {object}
    */
   async handleFilterJob(data) {
-    return await checking(this.jobModel.filterJobModel(data));
+    return await this.jobModel.filterJobModel(data);
   }
 
   async handleCountStatus() {
-    const jobCounts = await checking(this.jobModel.countStatusModel());
+    const jobCounts = await this.jobModel.countStatusModel();
     if (jobCounts) {
       // Update the UI to display the new status counts
       this.jobView.updateStatusCounts(jobCounts);

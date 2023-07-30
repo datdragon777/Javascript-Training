@@ -8,7 +8,7 @@ import {
 
 export default class JobModel {
   constructor() {
-    this.jobs = [];
+    this.jobs = []
   }
 
   /**
@@ -17,7 +17,6 @@ export default class JobModel {
    */
   async getJobsModel() {
     const response = await getJobsService();
-    this.jobs = response;
     return response;
   }
 
@@ -73,16 +72,16 @@ export default class JobModel {
    * @returns {object}
    */
   searchJobModel(value) {
+    if (!value) {
+      return this.jobs; // Return the original list if the search value is empty
+    }
+
     const data = this.jobs.filter((job) => {
-      if (job.title && typeof job.title === "string") {
+      if (job.title) {
         return job.title.toLowerCase().includes(value.toLowerCase());
       }
       return false;
     });
-
-    if (!value) {
-      return this.jobs; // Return the original list if the search value is empty
-    }
 
     return data;
   }
@@ -101,7 +100,11 @@ export default class JobModel {
     return filteredJobs;
   }
 
-  countStatusModel = () => {
+  /**
+   * Count status of each job
+   * @returns {object}
+   */
+  countStatusModel() {
     let jobCounts = {
       active: 0,
       completed: 0,

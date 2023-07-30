@@ -10,6 +10,7 @@ export default class JobView {
     this.formContent = getId("form-content");
     this.form = getId("form");
     this.formConfirmDelete = getId("form-delete-bg");
+    this.formError = getId("form-error-bg")
     this.titleCreateForm = getId("heading-title-create");
     this.titleUpdateForm = getId("heading-title-update");
 
@@ -74,6 +75,7 @@ export default class JobView {
       ) {
         this.formBg.classList.remove("is-visible");
         this.formConfirmDelete.classList.remove("is-visible");
+        this.formError.classList.remove("is-visible");
       }
     });
   }
@@ -232,6 +234,11 @@ export default class JobView {
       }
       await handleDeleteJob(jobId);
     });
+  }
+
+  // Open error popop
+  openErrorFormPopup() {
+    this.formError.classList.add("is-visible");
   }
 
   /**

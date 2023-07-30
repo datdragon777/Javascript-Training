@@ -1,16 +1,13 @@
 import { isSuccess } from "../helpers/check-service";
-import { baseUrl } from "../constants/baseUrl"
-
-const path = "jobs"
+import { BASE_URL, PATH } from "../constants/base-url";
 
 /**
  * Get job data from json-server
  * @returns {object}
  */
 export const getJobsService = async () => {
-  const response = await fetch(`${baseUrl}/${path}`);
-  const jobs = await response.json();
-  return jobs;
+  const response = await fetch(`${BASE_URL}/${PATH}`);
+  return response;
 };
 
 /**
@@ -19,9 +16,8 @@ export const getJobsService = async () => {
  * @returns {object}
  */
 export const getJobByIdService = async (id) => {
-  const response = await fetch(`${baseUrl}/${path}/${id}`);
-  const job = await response.json();
-  return job;
+  const response = await fetch(`${BASE_URL}/${PATH}/${id}`);
+  return response;
 };
 
 /**
@@ -30,17 +26,19 @@ export const getJobByIdService = async (id) => {
  * @returns {function || null}
  */
 export const addJobService = async (jobData) => {
-  const response = await fetch(`${baseUrl}/${path}`, {
+  const response = await fetch(`${BASE_URL}/${PATH}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(jobData),
   });
-  if (isSuccess(response)) {
-    return response;
-  }
-  return null;
+  return response;
+
+  // if (isSuccess(response)) {
+  //   return response;
+  // }
+  // return null;
 };
 
 /**
@@ -50,17 +48,14 @@ export const addJobService = async (jobData) => {
  * @returns {function || null}
  */
 export const updateJobService = async (id, jobData) => {
-  const response = await fetch(`${baseUrl}/${path}/${id}`, {
+  const response = await fetch(`${BASE_URL}/${PATH}/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(jobData),
   });
-  if (isSuccess(response)) {
-    return response;
-  }
-  return null;
+  return response;
 };
 
 /**
@@ -69,12 +64,8 @@ export const updateJobService = async (id, jobData) => {
  * @returns {function || null}
  */
 export const deleteJobService = async (id) => {
-  const response = await fetch(`${baseUrl}/${path}/${id}`, {
+  const response = await fetch(`${BASE_URL}/${PATH}/${id}`, {
     method: "DELETE",
   });
-  if (isSuccess(response)) {
-    console.log("delete in service:", id);
-    return response;
-  }
-  return null;
+  return response;
 };
