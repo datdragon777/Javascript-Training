@@ -15,6 +15,7 @@
     "parcel": "^2.9.3"
   },
   "dependencies": {
+    "json-server": "^0.17.3",
     "uuid": "^9.0.0"
   }
 }

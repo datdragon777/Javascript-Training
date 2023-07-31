@@ -34,11 +34,6 @@ export const addJobService = async (jobData) => {
     body: JSON.stringify(jobData),
   });
   return response;
-
-  // if (isSuccess(response)) {
-  //   return response;
-  // }
-  // return null;
 };
 
 /**

@@ -86,7 +86,7 @@ export default class JobView {
    * @returns if invalid, nothing return
    */
   addJobView(handleAddJob) {
-    this.btnCreateForm.addEventListener("click", async (e) => {
+    this.btnCreateForm.addEventListener("click", (e) => {
       e.preventDefault();
       if (!validationForm()) {
         return;
@@ -102,9 +102,9 @@ export default class JobView {
         description: getId("input-description").value,
         status: "active",
       };
-      await handleAddJob(jobValue);
+      handleAddJob(jobValue);
       this.formBg.classList.remove("is-visible");
-      this.displayJobItem(jobValue);
+      // this.displayJobItem(jobValue);
     });
   }
 
@@ -169,7 +169,7 @@ export default class JobView {
    * @param {object} jobUpdateValue
    */
   updateJobView(handleUpdateJob) {
-    this.btnUpdateForm.addEventListener("click", async (e) => {
+    this.btnUpdateForm.addEventListener("click", (e) => {
       e.preventDefault();
       if (!validationForm()) {
         return;
@@ -207,7 +207,7 @@ export default class JobView {
       }
 
       this.formBg.classList.remove("is-visible");
-      await handleUpdateJob(jobUpdateValue.id, jobUpdateValue);
+      handleUpdateJob(jobUpdateValue.id, jobUpdateValue);
     });
   }
 
@@ -226,13 +226,13 @@ export default class JobView {
    * @param {string} jobId
    */
   deleteJobView(handleDeleteJob) {
-    this.btnConfirmDelete.addEventListener("click", async () => {
+    this.btnConfirmDelete.addEventListener("click", () => {
       const jobId = getId("input-id").value;
       const jobItemElement = document.querySelector(`[data-id="${jobId}"]`);
       if (jobItemElement) {
         this.jobUl.removeChild(jobItemElement);
       }
-      await handleDeleteJob(jobId);
+      handleDeleteJob(jobId);
     });
   }
 

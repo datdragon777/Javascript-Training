@@ -1,15 +1,16 @@
+import { getId } from "./get-id";
 import {showMessageString} from "./messege";
 
 const formElements = [
   {
-    element: document.getElementById("input-logo"),
+    element: getId("input-logo"),
     paramName: "Logo",
     rule: {
       isRequired: true,
     },
   },
   {
-    element: document.getElementById("input-title"),
+    element: getId("input-title"),
     paramName: "Title",
     rule: {
       isRequired: true,
@@ -17,14 +18,14 @@ const formElements = [
     },
   },
   {
-    element: document.getElementById("input-location"),
+    element: getId("input-location"),
     paramName: "Location",
     rule: {
       isRequired: true,
     },
   },
   {
-    element: document.getElementById("select-menu"),
+    element: getId("select-menu"),
     paramName: "Category",
     rule: {
       isRequired: true,
@@ -32,7 +33,7 @@ const formElements = [
     },
   },
   {
-    element: document.getElementById("input-description"),
+    element: getId("input-description"),
     paramName: "Description",
     rule: {
       isRequired: true,

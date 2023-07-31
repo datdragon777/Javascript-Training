@@ -8,7 +8,7 @@ import {
 
 export default class JobModel {
   constructor() {
-    this.jobs = []
+    this.jobs = [];
   }
 
   /**
@@ -26,8 +26,12 @@ export default class JobModel {
    * @returns {object}
    */
   addJobModel(jobData) {
-    this.jobs.push(jobData);
-    return addJobService(jobData);
+    const response = addJobService(jobData)
+    if (response.ok) {
+      console.log("jobs array model:", this.jobs);
+      this.jobs.push(jobData);
+    }
+    return response;
   }
 
   /**
@@ -36,7 +40,8 @@ export default class JobModel {
    * @returns {object}
    */
   getJobByIdModel(id) {
-    return getJobByIdService(id);
+    const response = getJobByIdService(id);
+    return response;
   }
 
   /**
