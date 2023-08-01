@@ -28,7 +28,6 @@ export default class JobModel {
    */
   addJobModel(jobData) {
     const response = addJobService(jobData);
-    console.log("jobs array model:", this.jobs);
     // this.jobs.push(jobData);
     return response;
   }
