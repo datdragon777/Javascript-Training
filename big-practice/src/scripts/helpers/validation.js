@@ -1,5 +1,5 @@
 import { getId } from "./get-id";
-import {showMessageString} from "./messege";
+import {showMessageString} from "./message";
 
 const formElements = [
   {

@@ -41,19 +41,21 @@ big-practice
             |-- ...
     |-- scripts
         |-- constants
-            |-- ...
+            |-- base-url.js
         |-- controllers
-            |-- ...
+            |-- job.js
         |-- helpers
-            |-- ...
+            |-- get-id.js
+            |-- message.js
+            |-- validation.js
         |-- models
-            |-- ...
+            |-- job.js
         |-- services
-            |-- ...
+            |-- job.js
         |-- templates
-            |-- ...
+            |-- template.js
         |-- view
-            |-- ...
+            |-- jobs.js
         |-- index.js
     |-- styles
         |-- abtracts
@@ -93,28 +95,31 @@ big-practice
 ~~~
 git clone https://github.com/datdragon777/Javascript-Training.git
 ~~~
-- Step 02: Change to branch feature/big-practice:
-~~~
-git checkout develop
-git checkout feature/big-practice
-~~~
-- Step 03: Move to folder which just cloned in your computer:
+- Step 02: Move to folder which just cloned in your computer:
 ~~~
 cd Javascript-Training
+~~~
+- Step 03: Change to branch feature/big-practice:
+~~~
+git checkout feature/big-practice
 ~~~
 - Step 04: Next open folder big-practice
 ~~~
 cd big-practice
 ~~~
-- Step 05: Open terminal and type:
+- Step 05: Install Json-server
+~~~
+npm i -g json-server
+~~~
+- Step 06: Open terminal and type:
 ~~~
 npm install
 ~~~
-- Step 06: Run json-server:
+- Step 07: Run json-server:
 ~~~
 json-server json-server/db.json
 ~~~
-- Step 07: Open new terminal while old terminal is still running and finally run with:
+- Step 08: Open new terminal while old terminal is still running and finally run with:
 ~~~
 npm start
 ~~~
