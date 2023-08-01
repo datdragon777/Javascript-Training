@@ -1,16 +1,6 @@
 {
   "jobs": [
     {
-      "id": "2ff690b1-a8be-45c7-84f0-b0b601ee07e2",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
-      "title": "Google",
-      "date": "2023-07-27T03:57:44.466Z",
-      "category": "developer",
-      "location": "Global",
-      "description": "Google LLC (/ˈɡuːɡəl/ ( listen)) is an American multinational technology company focusing on artificial intelligence, online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.\n",
-      "status": "unfinished"
-    },
-    {
       "id": "d0f1bf07-9d29-48f8-bbdc-9ecbed2528c7",
       "logo": "https://icons.iconarchive.com/icons/github/octicons/256/copilot-96-icon.png",
       "title": "Copilot AI",
@@ -39,16 +29,6 @@
       "location": "Global",
       "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.\n",
       "status": "completed"
-    },
-    {
-      "id": "63312109-fb5b-46d9-819e-45696d4c1863",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
-      "title": "lip",
-      "date": "2023-07-31T09:01:57.915Z",
-      "category": "marketing",
-      "location": "India",
-      "description": "vávav",
-      "status": "active"
     }
   ]
 }

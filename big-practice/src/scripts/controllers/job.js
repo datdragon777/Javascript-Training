@@ -29,16 +29,8 @@ export default class JobController {
   async handleListJob() {
     try {
       const response = await this.jobModel.getJobsModel();
-      if (response.ok) {
-        const jobData = await response.json();
-        this.jobModel.jobs = jobData;
-        this.jobView.listJob(jobData);
-      } else {
-        console.log("hehe");
-        this.jobView.openErrorFormPopup();
-      }
+      this.jobView.listJob(response);
     } catch (error) {
-      console.log("mlem");
       this.jobView.openErrorFormPopup();
     }
   }
@@ -51,12 +43,9 @@ export default class JobController {
   async handleAddJob(data) {
     try {
       const response = await this.jobModel.addJobModel(data);
-      if (!response.ok) {
-        this.jobView.displayJobItem(data);
-      } else {
-        this.jobView.openErrorFormPopup();
-        return
-      }
+      this.jobView.displayJobItem(data);
+      this.jobModel.jobs.push(data)
+      this.handleCountStatus();
       return response;
     } catch (error) {
       this.jobView.openErrorFormPopup();
@@ -71,11 +60,7 @@ export default class JobController {
   async handleGetJobById(id) {
     try {
       const response = await this.jobModel.getJobByIdModel(id);
-      if (response.ok) {
-        return response.json();
-      } else {
-        this.jobView.openErrorFormPopup();
-      }
+      return response;
     } catch (error) {
       this.jobView.openErrorFormPopup();
     }
@@ -90,12 +75,8 @@ export default class JobController {
   async handleUpdateJob(id, data) {
     try {
       const response = await this.jobModel.updateJobModel(id, data);
-      if (response.ok) {
-        this.handleCountStatus();
-        return response;
-      } else {
-        this.jobView.openErrorFormPopup();
-      }
+      this.handleCountStatus();
+      return response;
     } catch (error) {
       this.jobView.openErrorFormPopup();
     }
@@ -109,11 +90,8 @@ export default class JobController {
   async handleDeleteJob(id) {
     try {
       const response = await this.jobModel.deleteJobModel(id);
-      if (response.ok) {
-        return response;
-      } else {
-        this.jobView.openErrorFormPopup();
-      }
+      this.handleCountStatus();
+      return response
     } catch (error) {
       this.jobView.openErrorFormPopup();
     }
@@ -137,6 +115,9 @@ export default class JobController {
     return await this.jobModel.filterJobModel(data);
   }
 
+  /**
+   * Count each job's status
+   */
   async handleCountStatus() {
     const jobCounts = await this.jobModel.countStatusModel();
     if (jobCounts) {

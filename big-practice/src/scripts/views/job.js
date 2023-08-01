@@ -104,7 +104,6 @@ export default class JobView {
       };
       handleAddJob(jobValue);
       this.formBg.classList.remove("is-visible");
-      // this.displayJobItem(jobValue);
     });
   }
 

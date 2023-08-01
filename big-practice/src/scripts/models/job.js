@@ -17,6 +17,7 @@ export default class JobModel {
    */
   async getJobsModel() {
     const response = await getJobsService();
+    this.jobs = response
     return response;
   }
 
@@ -26,11 +27,9 @@ export default class JobModel {
    * @returns {object}
    */
   addJobModel(jobData) {
-    const response = addJobService(jobData)
-    if (response.ok) {
-      console.log("jobs array model:", this.jobs);
-      this.jobs.push(jobData);
-    }
+    const response = addJobService(jobData);
+    console.log("jobs array model:", this.jobs);
+    // this.jobs.push(jobData);
     return response;
   }
 
