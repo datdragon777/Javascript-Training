@@ -28,7 +28,6 @@
 ## Environments: ##
 - Node: v18.16.0
 - Parcel: v2.9.3
-- Json-server: v0.17.3
 
 ## Folder structure ##
 big-practice
