@@ -18,7 +18,7 @@
 [Link](https://docs.google.com/document/d/1LQBzvdZADZi4jeqBcISl957o7EWoNlI1t7eGpapZQMc/edit?usp=sharing)
 
 ## Deploy: ##
-[Here](https://javascript-training-ifwuwa7mo-datdragon777.vercel.app/)
+[Here](https://javascript-training.vercel.app/)
 
 ## Information: ##
 - Time line: 27/06/2023 -> 28/07/2023
