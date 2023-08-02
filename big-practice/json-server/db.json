@@ -29,6 +29,16 @@
       "location": "Global",
       "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.\n",
       "status": "completed"
+    },
+    {
+      "id": "c87b56cf-5ec5-4e60-87dc-53b8427ff9aa",
+      "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
+      "title": "Black clover slack",
+      "date": "2023-08-02T04:13:31.847Z",
+      "category": "design",
+      "location": "Japan",
+      "description": "Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate.\n",
+      "status": "active"
     }
   ]
 }
