@@ -31,14 +31,14 @@
       "status": "completed"
     },
     {
-      "id": "c87b56cf-5ec5-4e60-87dc-53b8427ff9aa",
+      "id": "fd05e8fc-c5a2-4801-b04d-0c3373490390",
       "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
-      "title": "Black clover slack",
-      "date": "2023-08-02T04:13:31.847Z",
-      "category": "design",
-      "location": "Japan",
+      "title": "Slack black",
+      "date": "2023-08-03T02:32:12.374Z",
+      "category": "developer",
+      "location": "USA",
       "description": "Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate.\n",
-      "status": "active"
+      "status": "unfinished"
     }
   ]
 }

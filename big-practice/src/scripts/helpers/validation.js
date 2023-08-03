@@ -91,7 +91,7 @@ export const validationForm = () => {
 
     // check empty
     if (!!rule.isRequired && isEmpty(value)) {
-      setError(element, showMessageString.MSGE00001(paramName));
+      setError(element, showMessageString(paramName));
       isValid = false;
     } else {
       setSuccess(element);

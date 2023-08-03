@@ -1,7 +1,7 @@
 export default class Template {
   constructor() {}
 
-  jobItem(job) {
+  jobItem = (job) => {
     const jobDate = moment(job.date).format("DD MMMM");
     const li = document.createElement("li");
     li.classList.add("job__item");
@@ -22,7 +22,7 @@ export default class Template {
         <div class="card__description">${job.description}</div>
       </div>
       <div class="card__footer">
-        <a class="card__link" id="card-link" data-id="${job.id}">See more</a>
+        <a class="card__link" id="card-link" data-id="${job.id}">Edit here</a>
       </div>
     `;
 

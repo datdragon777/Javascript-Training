@@ -19,6 +19,8 @@ const request = async (path, method, data) => {
 
   if (response.ok) {
     return response.json();
+  } else {
+    throw new Error("Error while sending request");
   }
 };
 
@@ -65,4 +67,4 @@ export const updateJobService = (id, jobData) => {
  */
 export const deleteJobService = (id) => {
   return request(`${PATH}/${id}`, "DELETE");
-}
+};

@@ -26,7 +26,7 @@ export default class JobController {
   /**
    * Handle get list job
    */
-  async handleListJob() {
+  handleListJob = async() => {
     try {
       const response = await this.jobModel.getJobsModel();
       this.jobView.listJob(response);
@@ -40,11 +40,11 @@ export default class JobController {
    * @param {object} data
    * @returns {object}
    */
-  async handleAddJob(data) {
+  handleAddJob = async(data) => {
     try {
       const response = await this.jobModel.addJobModel(data);
       this.jobView.displayJobItem(data);
-      this.jobModel.jobs.push(data)
+      this.jobModel.jobs.push(data);
       this.handleCountStatus();
       return response;
     } catch (error) {
@@ -57,7 +57,7 @@ export default class JobController {
    * @param {string} id
    * @returns {object}
    */
-  async handleGetJobById(id) {
+  handleGetJobById = async(id) => {
     try {
       const response = await this.jobModel.getJobByIdModel(id);
       return response;
@@ -72,7 +72,7 @@ export default class JobController {
    * @param {object} data - job's information after updating
    * @returns {object}
    */
-  async handleUpdateJob(id, data) {
+  handleUpdateJob = async(id, data) => {
     try {
       const response = await this.jobModel.updateJobModel(id, data);
       this.handleCountStatus();
@@ -87,7 +87,7 @@ export default class JobController {
    * @param {string} id - ID of job
    * @returns {object}
    */
-  async handleDeleteJob(id) {
+  handleDeleteJob = async(id) => {
     try {
       const response = await this.jobModel.deleteJobModel(id);
       this.handleCountStatus();
@@ -102,8 +102,8 @@ export default class JobController {
    * @param {string} data
    * @returns {object}
    */
-  async handleSearchJob(data) {
-    return await this.jobModel.searchJobModel(data);
+  handleSearchJob = (data) => {
+    return this.jobModel.searchJobModel(data);
   }
 
   /**
@@ -111,15 +111,15 @@ export default class JobController {
    * @param {string} data
    * @returns {object}
    */
-  async handleFilterJob(data) {
-    return await this.jobModel.filterJobModel(data);
+  handleFilterJob = (data) => {
+    return this.jobModel.filterJobModel(data);
   }
 
   /**
    * Count each job's status
    */
-  async handleCountStatus() {
-    const jobCounts = await this.jobModel.countStatusModel();
+  handleCountStatus = () => {
+    const jobCounts = this.jobModel.countStatusModel();
     if (jobCounts) {
       // Update the UI to display the new status counts
       this.jobView.updateStatusCounts(jobCounts);

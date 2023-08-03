@@ -28,6 +28,7 @@
 
 .btn__create {
   display: block;
+  margin-left: auto;
 }
 
 .btn__delete,
