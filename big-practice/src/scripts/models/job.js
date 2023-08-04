@@ -29,6 +29,7 @@ export default class JobModel {
    */
   addJobModel = (jobData) => {
     const response = addJobService(jobData);
+    this.jobs.push(jobData);
     return response;
   };
 
@@ -68,6 +69,7 @@ export default class JobModel {
   deleteJobModel = (id) => {
     const response = deleteJobService(id);
     this.jobs = this.jobs.filter((item) => item.id !== id);
+    
     return response;
   };
 

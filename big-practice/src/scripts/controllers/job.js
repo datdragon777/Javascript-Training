@@ -44,7 +44,6 @@ export default class JobController {
     try {
       const response = await this.jobModel.addJobModel(data);
       this.jobView.displayJobItem(data);
-      this.jobModel.jobs.push(data);
       this.handleCountStatus();
       return response;
     } catch (error) {
