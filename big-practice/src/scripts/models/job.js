@@ -1,3 +1,4 @@
+"use strict"
 import {
   getJobsService,
   addJobService,
@@ -51,12 +52,11 @@ export default class JobModel {
    */
   updateJobModel = (id, jobData) => {
     const response = updateJobService(id, jobData);
-    this.jobs = this.jobs.map((item) => {
-      if (item.id === id) {
-        return jobData;
-      }
-      return item;
-    });
+    const index = this.jobs.findIndex((item) => item.id === id);
+
+    if (index !== -1) {
+      this.jobs[index] = jobData;
+    }
 
     return response;
   };
@@ -69,7 +69,7 @@ export default class JobModel {
   deleteJobModel = (id) => {
     const response = deleteJobService(id);
     this.jobs = this.jobs.filter((item) => item.id !== id);
-    
+
     return response;
   };
 

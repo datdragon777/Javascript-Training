@@ -4,8 +4,8 @@
       "id": "d0f1bf07-9d29-48f8-bbdc-9ecbed2528c7",
       "logo": "https://icons.iconarchive.com/icons/github/octicons/256/copilot-96-icon.png",
       "title": "Copilot AI",
-      "date": "2023-07-30T13:47:04.667Z",
-      "category": "developer",
+      "date": "2023-08-07T01:59:29.172Z",
+      "category": "design",
       "location": "USA",
       "description": "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code. You can receive suggestions from GitHub Copilot either by starting to write the code you want to use, or by writing a natural language comment describing what you want the code to do.\n",
       "status": "unfinished"
@@ -29,16 +29,6 @@
       "location": "Global",
       "description": "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.\n",
       "status": "completed"
-    },
-    {
-      "id": "fd05e8fc-c5a2-4801-b04d-0c3373490390",
-      "logo": "https://cdn.icon-icons.com/icons2/2428/PNG/512/slack_black_logo_icon_147081.png",
-      "title": "Slack black",
-      "date": "2023-08-03T02:32:12.374Z",
-      "category": "developer",
-      "location": "USA",
-      "description": "Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate.\n",
-      "status": "unfinished"
     }
   ]
 }

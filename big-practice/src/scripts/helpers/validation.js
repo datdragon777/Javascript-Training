@@ -1,16 +1,16 @@
-import { getId } from "./get-id";
-import {showMessageString} from "./message";
+import { showMessageString } from "./message";
+import { addClass, removeClass } from "./ui-control";
 
 const formElements = [
   {
-    element: getId("input-logo"),
+    element: document.getElementById("input-logo"),
     paramName: "Logo",
     rule: {
       isRequired: true,
     },
   },
   {
-    element: getId("input-title"),
+    element: document.getElementById("input-title"),
     paramName: "Title",
     rule: {
       isRequired: true,
@@ -18,14 +18,14 @@ const formElements = [
     },
   },
   {
-    element: getId("input-location"),
+    element: document.getElementById("input-location"),
     paramName: "Location",
     rule: {
       isRequired: true,
     },
   },
   {
-    element: getId("select-menu"),
+    element: document.getElementById("select-menu"),
     paramName: "Category",
     rule: {
       isRequired: true,
@@ -33,7 +33,7 @@ const formElements = [
     },
   },
   {
-    element: getId("input-description"),
+    element: document.getElementById("input-description"),
     paramName: "Description",
     rule: {
       isRequired: true,
@@ -52,8 +52,8 @@ const setError = (element, message) => {
   const errorDisplay = inputControl.querySelector(".form__error");
 
   errorDisplay.innerText = message;
-  inputControl.classList.add("form__error");
-  inputControl.classList.remove("form__success");
+  addClass(inputControl, "form__error");
+  removeClass(inputControl, "form__success");
 };
 
 /**
@@ -65,8 +65,8 @@ const setSuccess = (element) => {
   const errorDisplay = inputControl.querySelector(".form__error");
 
   errorDisplay.innerText = "";
-  inputControl.classList.add("form__success");
-  inputControl.classList.remove("form__error");
+  addClass(inputControl, "form__success");
+  removeClass(inputControl, "form__error");
 };
 
 /**
@@ -75,8 +75,7 @@ const setSuccess = (element) => {
  * @returns if empty, return True.
  */
 export const isEmpty = (str) => {
-  if (!str)
-    return true;
+  if (!str) return true;
   return false;
 };
 

@@ -1,12 +1,13 @@
+import { addClass } from "../helpers/ui-control";
+
 export default class Template {
   constructor() {}
 
   jobItem = (job) => {
     const jobDate = moment(job.date).format("DD MMMM");
     const li = document.createElement("li");
-    li.classList.add("job__item");
+    addClass(li, "job__item")
     li.setAttribute("data-id", job.id);
-    li.setAttribute("id", "job-item");
 
     li.innerHTML = `
       <div class="card__header">

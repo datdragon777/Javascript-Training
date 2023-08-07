@@ -1,36 +1,36 @@
-import { getId } from "../helpers/get-id";
 import { validationForm, clearValidationStyles } from "../helpers/validation";
+import { addClass, removeClass } from "../helpers/ui-control";
 import { v4 as uuidv4 } from "uuid";
 export default class JobView {
   constructor(template) {
     this.template = template;
 
     // Form
-    this.formBg = getId("form-bg");
-    this.formContent = getId("form-content");
-    this.form = getId("form");
-    this.formConfirmDelete = getId("form-delete-bg");
-    this.formError = getId("form-error-bg");
-    this.titleCreateForm = getId("heading-title-create");
-    this.titleUpdateForm = getId("heading-title-update");
+    this.formBg = document.getElementById("form-bg");
+    this.formContent = document.getElementById("form-content");
+    this.form = document.getElementById("form");
+    this.formConfirmDelete = document.getElementById("form-delete-bg");
+    this.formError = document.getElementById("form-error-bg");
+    this.titleCreateForm = document.getElementById("heading-title-create");
+    this.titleUpdateForm = document.getElementById("heading-title-update");
 
     // Button
-    this.btnCreateJob = getId("create-job-btn");
-    this.btnCreateForm = getId("btn-create");
-    this.btnUpdateForm = getId("btn-update");
-    this.btnDeleteForm = getId("btn-delete");
-    this.btnConfirmDelete = getId("btn-confirm-delete");
-    this.btnSearch = getId("search-btn");
-    this.btnFilter = getId("btn-box");
+    this.btnCreateJob = document.getElementById("create-job-btn");
+    this.btnCreateForm = document.getElementById("btn-create");
+    this.btnUpdateForm = document.getElementById("btn-update");
+    this.btnDeleteForm = document.getElementById("btn-delete");
+    this.btnConfirmDelete = document.getElementById("btn-confirm-delete");
+    this.btnSearch = document.getElementById("search-btn");
+    this.btnFilter = document.getElementById("btn-box");
 
     // Another
-    this.jobUl = getId("job-list");
-    this.statusFormGroup = getId("form-group-update");
-    this.searchField = getId("search-field");
-    this.allCount = getId("all-count");
-    this.activeCount = getId("active-count");
-    this.completedCount = getId("completed-count");
-    this.unfinishedCount = getId("unfinished-count");
+    this.jobUl = document.getElementById("job-list");
+    this.statusFormGroup = document.getElementById("form-group-update");
+    this.searchField = document.getElementById("search-field");
+    this.allCount = document.getElementById("all-count");
+    this.activeCount = document.getElementById("active-count");
+    this.completedCount = document.getElementById("completed-count");
+    this.unfinishedCount = document.getElementById("unfinished-count");
   }
 
   /**
@@ -55,13 +55,13 @@ export default class JobView {
     this.btnCreateJob.addEventListener("click", () => {
       this.form.reset();
       clearValidationStyles();
-      this.titleCreateForm.classList.remove("is-hidden");
-      this.titleUpdateForm.classList.remove("is-show");
-      this.btnCreateForm.classList.remove("is-hidden");
-      this.btnUpdateForm.classList.remove("is-show");
-      this.btnDeleteForm.classList.remove("is-show");
-      this.statusFormGroup.classList.remove("is-show");
-      this.formBg.classList.add("is-visible");
+      removeClass(this.titleCreateForm, "is-hidden");
+      removeClass(this.titleUpdateForm, "is-show");
+      removeClass(this.btnCreateForm, "is-hidden");
+      removeClass(this.btnUpdateForm, "is-show");
+      removeClass(this.btnDeleteForm, "is-show");
+      removeClass(this.statusFormGroup, "is-show");
+      addClass(this.formBg, "is-visible");
     });
   };
 
@@ -74,9 +74,9 @@ export default class JobView {
         !this.formContent.contains(targetElement) &&
         targetElement !== this.btnCreateJob
       ) {
-        this.formBg.classList.remove("is-visible");
-        this.formConfirmDelete.classList.remove("is-visible");
-        this.formError.classList.remove("is-visible");
+        removeClass(this.formBg, "is-visible")
+        removeClass(this.formConfirmDelete, "is-visible")
+        removeClass(this.formError, "is-visible")
       }
     });
   };
@@ -92,19 +92,18 @@ export default class JobView {
       if (!validationForm()) {
         return;
       }
-
       const jobValue = {
         id: uuidv4(),
-        logo: getId("input-logo").value,
-        title: getId("input-title").value,
+        logo: document.getElementById("input-logo").value,
+        title: document.getElementById("input-title").value,
         date: new Date(),
-        category: getId("select-menu").value,
-        location: getId("input-location").value,
-        description: getId("input-description").value,
+        category: document.getElementById("select-menu").value,
+        location: document.getElementById("input-location").value,
+        description: document.getElementById("input-description").value,
         status: "active",
       };
       handleAddJob(jobValue);
-      this.formBg.classList.remove("is-visible");
+      removeClass(this.formBg, "is-visible")
     });
   };
 
@@ -151,13 +150,13 @@ export default class JobView {
           }
         }
 
-        this.titleCreateForm.classList.add("is-hidden");
-        this.titleUpdateForm.classList.add("is-show");
-        this.btnCreateForm.classList.add("is-hidden");
-        this.btnUpdateForm.classList.add("is-show");
-        this.btnDeleteForm.classList.add("is-show");
-        this.statusFormGroup.classList.add("is-show");
-        this.formBg.classList.add("is-visible");
+        addClass(this.titleCreateForm, "is-hidden")
+        addClass(this.titleUpdateForm, "is-show")
+        addClass(this.btnCreateForm, "is-hidden")
+        addClass(this.btnUpdateForm, "is-show")
+        addClass(this.btnDeleteForm, "is-show")
+        addClass(this.statusFormGroup, "is-show")
+        addClass(this.formBg, "is-visible")
       }
     });
   };
@@ -177,13 +176,13 @@ export default class JobView {
 
       // Get update value
       const jobUpdateValue = {
-        id: getId("input-id").value,
-        logo: getId("input-logo").value,
-        title: getId("input-title").value,
+        id: document.getElementById("input-id").value,
+        logo: document.getElementById("input-logo").value,
+        title: document.getElementById("input-title").value,
         date: new Date(),
-        category: getId("select-menu").value,
-        location: getId("input-location").value,
-        description: getId("input-description").value,
+        category: document.getElementById("select-menu").value,
+        location: document.getElementById("input-location").value,
+        description: document.getElementById("input-description").value,
         status: this.form.querySelector('input[name="status"]:checked').value,
       };
 
@@ -206,7 +205,7 @@ export default class JobView {
           jobUpdateValue.description;
       }
 
-      this.formBg.classList.remove("is-visible");
+      removeClass(this.formBg, "is-visible")
       handleUpdateJob(jobUpdateValue.id, jobUpdateValue);
     });
   };
@@ -215,8 +214,8 @@ export default class JobView {
   openDeleteFormPopup = () => {
     this.btnDeleteForm.addEventListener("click", (e) => {
       e.preventDefault();
-      this.formBg.classList.remove("is-visible");
-      this.formConfirmDelete.classList.add("is-visible");
+      removeClass(this.formBg, "is-visible")
+      addClass(this.formConfirmDelete, "is-visible")
     });
   };
 
@@ -227,7 +226,7 @@ export default class JobView {
    */
   deleteJobView = (handleDeleteJob) => {
     this.btnConfirmDelete.addEventListener("click", () => {
-      const jobId = getId("input-id").value;
+      const jobId = document.getElementById("input-id").value;
       const jobItemElement = document.querySelector(`[data-id="${jobId}"]`);
       if (jobItemElement) {
         this.jobUl.removeChild(jobItemElement);
@@ -238,7 +237,7 @@ export default class JobView {
 
   // Open error popop
   openErrorFormPopup = () => {
-    this.formError.classList.add("is-visible");
+    addClass(this.formError, "is-visible")
   };
 
   /**
@@ -289,7 +288,7 @@ export default class JobView {
    * @param {Object} jobCounts
    */
   updateStatusCounts = (jobCounts) => {
-    const { active = 0, completed = 0, unfinished = 0, all = 0} = jobCounts;
+    const { active = 0, completed = 0, unfinished = 0, all = 0 } = jobCounts;
     this.activeCount.innerText = String(active).padStart(2, "0");
     this.completedCount.innerText = String(completed).padStart(2, "0");
     this.unfinishedCount.innerText = String(unfinished).padStart(2, "0");
