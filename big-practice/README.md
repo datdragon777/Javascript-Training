@@ -44,8 +44,8 @@ big-practice
         |-- controllers
             |-- job.js
         |-- helpers
-            |-- get-id.js
             |-- message.js
+            |-- ui-control.js
             |-- validation.js
         |-- models
             |-- job.js
@@ -72,7 +72,7 @@ big-practice
             |-- container.css
             |-- heading.css
             |-- input.css
-            |-- navbar.css
+            |-- header-bar.css
             |-- side-bar.css
         |-- contents
             |-- all.css
