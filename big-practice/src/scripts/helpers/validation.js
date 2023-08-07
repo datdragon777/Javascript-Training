@@ -93,11 +93,32 @@ export const validationForm = () => {
       setError(element, showMessageString(paramName));
       isValid = false;
     } else {
-      setSuccess(element);
+      // Additional check for logo link validation
+      if (paramName === "Logo") {
+        if (!isValidLogoLink(value)) {
+          setError(element, "Invalid logo image link.");
+          isValid = false;
+        } else {
+          setSuccess(element);
+        }
+      } else {
+        setSuccess(element);
+      }
     }
   });
 
   return isValid;
+};
+
+/**
+ * Function to check if a given URL is a valid image link
+ * @param {string} url - The URL to check
+ * @returns {boolean} - True if the URL is a valid image link, otherwise false
+ */
+const isValidLogoLink = (url) => {
+  const imageExtensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp", "svg"];
+  const lowerCaseUrl = url.toLowerCase();
+  return imageExtensions.some((ext) => lowerCaseUrl.endsWith(ext));
 };
 
 /**
