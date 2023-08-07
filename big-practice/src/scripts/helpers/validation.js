@@ -116,7 +116,7 @@ export const validationForm = () => {
  * @returns {boolean} - True if the URL is a valid image link, otherwise false
  */
 const isValidLogoLink = (url) => {
-  const imageExtensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp", "svg"];
+  const imageExtensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg"];
   const lowerCaseUrl = url.toLowerCase();
   return imageExtensions.some((ext) => lowerCaseUrl.endsWith(ext));
 };
