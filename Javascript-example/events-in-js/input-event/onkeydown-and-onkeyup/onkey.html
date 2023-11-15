@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onkeydown and onkeyup</title>
+  </head>
+  <body>
+    <form>
+      <p>Press the key down to change yellow background</p>
+      <p>Release the key to change white background</p>  
+      Write a message:<br />
+      <input type="text" onkeydown="color('yellow')" onkeyup="color('white')" name="myInput" />
+    </form>
+    <script src="./onkey.js"></script>
+  </body>
+</html>
